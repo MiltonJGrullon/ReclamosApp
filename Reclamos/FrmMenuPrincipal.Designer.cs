@@ -30,13 +30,14 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.entradasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registroDeTiposDeReclamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroDeClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroDeDepartamentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroDeOperadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroDeNivelesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroDeAccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registroDeDepartamentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registroDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registroDeClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registroDeOperadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroDeTiposDeReclamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroDeTiposDeCorreosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transaccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reclamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,6 +47,7 @@
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirDelSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.registroDeTiposRedesSocialesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -73,59 +75,68 @@
             this.registroDeToolStripMenuItem,
             this.registroDeNivelesToolStripMenuItem,
             this.registroDeAccionesToolStripMenuItem,
-            this.registroDeTiposDeReclamosToolStripMenuItem});
+            this.registroDeTiposDeReclamosToolStripMenuItem,
+            this.registroDeTiposDeCorreosToolStripMenuItem,
+            this.registroDeTiposRedesSocialesToolStripMenuItem});
             this.entradasToolStripMenuItem.Name = "entradasToolStripMenuItem";
             this.entradasToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.entradasToolStripMenuItem.Text = "Entradas";
             // 
-            // registroDeTiposDeReclamosToolStripMenuItem
+            // registroDeClientesToolStripMenuItem
             // 
-            this.registroDeTiposDeReclamosToolStripMenuItem.Name = "registroDeTiposDeReclamosToolStripMenuItem";
-            this.registroDeTiposDeReclamosToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
-            this.registroDeTiposDeReclamosToolStripMenuItem.Text = "Registro de tipos de reclamos";
-            this.registroDeTiposDeReclamosToolStripMenuItem.Click += new System.EventHandler(this.registroDeTiposDeReclamosToolStripMenuItem_Click);
+            this.registroDeClientesToolStripMenuItem.Name = "registroDeClientesToolStripMenuItem";
+            this.registroDeClientesToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
+            this.registroDeClientesToolStripMenuItem.Text = "Registro de clientes";
+            this.registroDeClientesToolStripMenuItem.Click += new System.EventHandler(this.registroDeClientesToolStripMenuItem_Click);
+            // 
+            // registroDeDepartamentosToolStripMenuItem
+            // 
+            this.registroDeDepartamentosToolStripMenuItem.Name = "registroDeDepartamentosToolStripMenuItem";
+            this.registroDeDepartamentosToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
+            this.registroDeDepartamentosToolStripMenuItem.Text = "Registro de departamentos";
+            this.registroDeDepartamentosToolStripMenuItem.Click += new System.EventHandler(this.registroDeDepartamentosToolStripMenuItem_Click);
+            // 
+            // registroDeOperadoresToolStripMenuItem
+            // 
+            this.registroDeOperadoresToolStripMenuItem.Name = "registroDeOperadoresToolStripMenuItem";
+            this.registroDeOperadoresToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
+            this.registroDeOperadoresToolStripMenuItem.Text = "Registro de operadores";
+            this.registroDeOperadoresToolStripMenuItem.Click += new System.EventHandler(this.registroDeOperadoresToolStripMenuItem_Click);
+            // 
+            // registroDeToolStripMenuItem
+            // 
+            this.registroDeToolStripMenuItem.Name = "registroDeToolStripMenuItem";
+            this.registroDeToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
+            this.registroDeToolStripMenuItem.Text = "Registro de usuarios";
+            this.registroDeToolStripMenuItem.Click += new System.EventHandler(this.registroDeToolStripMenuItem_Click);
             // 
             // registroDeNivelesToolStripMenuItem
             // 
             this.registroDeNivelesToolStripMenuItem.Name = "registroDeNivelesToolStripMenuItem";
-            this.registroDeNivelesToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
+            this.registroDeNivelesToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
             this.registroDeNivelesToolStripMenuItem.Text = "Registro de niveles";
             this.registroDeNivelesToolStripMenuItem.Click += new System.EventHandler(this.registroDeNivelesToolStripMenuItem_Click);
             // 
             // registroDeAccionesToolStripMenuItem
             // 
             this.registroDeAccionesToolStripMenuItem.Name = "registroDeAccionesToolStripMenuItem";
-            this.registroDeAccionesToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
+            this.registroDeAccionesToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
             this.registroDeAccionesToolStripMenuItem.Text = "Registro de acciones";
             this.registroDeAccionesToolStripMenuItem.Click += new System.EventHandler(this.registroDeAccionesToolStripMenuItem_Click);
             // 
-            // registroDeDepartamentosToolStripMenuItem
+            // registroDeTiposDeReclamosToolStripMenuItem
             // 
-            this.registroDeDepartamentosToolStripMenuItem.Name = "registroDeDepartamentosToolStripMenuItem";
-            this.registroDeDepartamentosToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
-            this.registroDeDepartamentosToolStripMenuItem.Text = "Registro de departamentos";
-            this.registroDeDepartamentosToolStripMenuItem.Click += new System.EventHandler(this.registroDeDepartamentosToolStripMenuItem_Click);
+            this.registroDeTiposDeReclamosToolStripMenuItem.Name = "registroDeTiposDeReclamosToolStripMenuItem";
+            this.registroDeTiposDeReclamosToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
+            this.registroDeTiposDeReclamosToolStripMenuItem.Text = "Registro de tipos de reclamos";
+            this.registroDeTiposDeReclamosToolStripMenuItem.Click += new System.EventHandler(this.registroDeTiposDeReclamosToolStripMenuItem_Click);
             // 
-            // registroDeToolStripMenuItem
+            // registroDeTiposDeCorreosToolStripMenuItem
             // 
-            this.registroDeToolStripMenuItem.Name = "registroDeToolStripMenuItem";
-            this.registroDeToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
-            this.registroDeToolStripMenuItem.Text = "Registro de usuarios";
-            this.registroDeToolStripMenuItem.Click += new System.EventHandler(this.registroDeToolStripMenuItem_Click);
-            // 
-            // registroDeClientesToolStripMenuItem
-            // 
-            this.registroDeClientesToolStripMenuItem.Name = "registroDeClientesToolStripMenuItem";
-            this.registroDeClientesToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
-            this.registroDeClientesToolStripMenuItem.Text = "Registro de clientes";
-            this.registroDeClientesToolStripMenuItem.Click += new System.EventHandler(this.registroDeClientesToolStripMenuItem_Click);
-            // 
-            // registroDeOperadoresToolStripMenuItem
-            // 
-            this.registroDeOperadoresToolStripMenuItem.Name = "registroDeOperadoresToolStripMenuItem";
-            this.registroDeOperadoresToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
-            this.registroDeOperadoresToolStripMenuItem.Text = "Registro de operadores";
-            this.registroDeOperadoresToolStripMenuItem.Click += new System.EventHandler(this.registroDeOperadoresToolStripMenuItem_Click);
+            this.registroDeTiposDeCorreosToolStripMenuItem.Name = "registroDeTiposDeCorreosToolStripMenuItem";
+            this.registroDeTiposDeCorreosToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
+            this.registroDeTiposDeCorreosToolStripMenuItem.Text = "Registro de Tipos de Correos";
+            this.registroDeTiposDeCorreosToolStripMenuItem.Click += new System.EventHandler(this.registroDeTiposDeCorreosToolStripMenuItem_Click);
             // 
             // transaccionesToolStripMenuItem
             // 
@@ -138,7 +149,7 @@
             // reclamosToolStripMenuItem
             // 
             this.reclamosToolStripMenuItem.Name = "reclamosToolStripMenuItem";
-            this.reclamosToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.reclamosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.reclamosToolStripMenuItem.Text = "Reclamos";
             this.reclamosToolStripMenuItem.Click += new System.EventHandler(this.reclamosToolStripMenuItem_Click);
             // 
@@ -199,6 +210,13 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // registroDeTiposRedesSocialesToolStripMenuItem
+            // 
+            this.registroDeTiposRedesSocialesToolStripMenuItem.Name = "registroDeTiposRedesSocialesToolStripMenuItem";
+            this.registroDeTiposRedesSocialesToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
+            this.registroDeTiposRedesSocialesToolStripMenuItem.Text = "Registro de Tipos Redes Sociales";
+            this.registroDeTiposRedesSocialesToolStripMenuItem.Click += new System.EventHandler(this.registroDeTiposRedesSocialesToolStripMenuItem_Click);
+            // 
             // FrmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -240,5 +258,7 @@
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirDelSistemaToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripMenuItem registroDeTiposDeCorreosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registroDeTiposRedesSocialesToolStripMenuItem;
     }
 }

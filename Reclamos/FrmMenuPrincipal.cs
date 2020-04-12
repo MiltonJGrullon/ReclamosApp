@@ -80,5 +80,17 @@ namespace Reclamos
             FrmClientes frm = new FrmClientes();
             frm.ShowDialog();
         }
+
+        private void registroDeTiposDeCorreosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmTiposCorreos frm = new FrmTiposCorreos();
+            frm.ShowDialog();
+        }
+
+        private void registroDeTiposRedesSocialesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmTiposRedesSociales frm = new FrmTiposRedesSociales();
+            frm.ShowDialog();
+        }
     }
 }

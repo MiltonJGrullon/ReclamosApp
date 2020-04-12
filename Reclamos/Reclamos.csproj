@@ -113,11 +113,23 @@
     <Compile Include="FrmReclamosAcciones.Designer.cs">
       <DependentUpon>FrmReclamosAcciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmTiposCorreos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTiposCorreos.Designer.cs">
+      <DependentUpon>FrmTiposCorreos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmTiposReclamos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmTiposReclamos.Designer.cs">
       <DependentUpon>FrmTiposReclamos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTiposRedesSociales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTiposRedesSociales.Designer.cs">
+      <DependentUpon>FrmTiposRedesSociales.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmUsuarios.cs">
       <SubType>Form</SubType>
@@ -160,8 +172,14 @@
     <EmbeddedResource Include="FrmReclamosAcciones.resx">
       <DependentUpon>FrmReclamosAcciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmTiposCorreos.resx">
+      <DependentUpon>FrmTiposCorreos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmTiposReclamos.resx">
       <DependentUpon>FrmTiposReclamos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTiposRedesSociales.resx">
+      <DependentUpon>FrmTiposRedesSociales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUsuarios.resx">
       <DependentUpon>FrmUsuarios.cs</DependentUpon>
