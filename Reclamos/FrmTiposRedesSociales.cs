@@ -139,7 +139,7 @@ namespace Reclamos
             }
             if (string.IsNullOrEmpty(txtnombre.Text.Trim()))
             {
-                MessageBox.Show("Campo descripcion es obligatorio, favor revisar.");
+                MessageBox.Show("Campo nombre es obligatorio, favor revisar.");
                 txtnombre.Focus();
                 return;
             }

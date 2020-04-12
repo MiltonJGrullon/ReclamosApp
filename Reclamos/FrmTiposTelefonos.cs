@@ -9,15 +9,15 @@ using System.Windows.Forms;
 
 namespace Reclamos
 {
-    public partial class FrmTiposCorreos : Form
+    public partial class FrmTiposTelefonos : Form
     {
-        public FrmTiposCorreos()
+        public FrmTiposTelefonos()
         {
             InitializeComponent();
             limpiar();
             id.DataPropertyName = "id";
             nombre.DataPropertyName = "nombre";
-          
+
             dataGridView1.AutoGenerateColumns = false;
             llenargrid();
             camposlec(true);
@@ -26,7 +26,7 @@ namespace Reclamos
 
         private void llenargrid(string vfil = "")
         {
-            dtdata = Ctool.ExcSqlDT("select id, nombre from Gen.Tipos_Correos where idcompania = " + Ctool.cia);
+            dtdata = Ctool.ExcSqlDT("select id, nombre from Gen.Tipos_Telefonos where idcompania = " + Ctool.cia);
             if (Ctool.OcError)
             {
                 return;
@@ -35,7 +35,7 @@ namespace Reclamos
         }
 
         DataTable dtdata = new DataTable();
-     
+
 
         private void btnsalir_Click(object sender, EventArgs e)
         {
@@ -52,7 +52,7 @@ namespace Reclamos
         private void limpiar(bool a = true)
         {
             txtnombre.Text = string.Empty;
-          
+
 
             if (a)
             {
@@ -71,11 +71,11 @@ namespace Reclamos
 
         private void llenarcampos()
         {
-            DataTable dt = Ctool.ExcSqlDT("Select * from Gen.Tipos_Correos where idcompania = " + Ctool.cia + " and id = " + txtcod.Text.Trim());
+            DataTable dt = Ctool.ExcSqlDT("Select * from Gen.Tipos_Telefonos where idcompania = " + Ctool.cia + " and id = " + txtcod.Text.Trim());
             if (dt.Rows.Count > 0)
             {
                 txtnombre.Text = dt.Rows[0]["nombre"].ToString().Trim();
-                
+
                 camposlec(false);
                 txtnombre.Focus();
             }
@@ -90,7 +90,7 @@ namespace Reclamos
         {
             txtcod.Enabled = vtip;
             txtnombre.Enabled = vtip;
-         
+
             btnmodificar.Enabled = !vtip;
             btnsalvar.Enabled = vtip;
             btnborrar.Enabled = vtip;
@@ -109,7 +109,7 @@ namespace Reclamos
                 llenarcampos();
         }
 
-       
+
 
         private void txtcod_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -145,11 +145,11 @@ namespace Reclamos
                 return;
             }
             string vcod = txtcod.Text.Trim(), vdes = txtnombre.Text.Trim();
-         
-            Ctool.ExcSql($"exec Gen.proc_tcorreos @idcompania = {Ctool.cia} ,@id = {vcod},@nombre = '{vdes}' ");
+
+            Ctool.ExcSql($"exec Gen.proc_ttelefonos @idcompania = {Ctool.cia} ,@id = {vcod},@nombre = '{vdes}' ");
             if (Ctool.OcError)
             {
-                
+
                 return;
             }
 
@@ -167,7 +167,7 @@ namespace Reclamos
             }
 
             string vcod = txtcod.Text.Trim();
-            Ctool.ExcSql($"delete from Gen.Tipos_Correos  where idcompania = {Ctool.cia} and id = {vcod}");
+            Ctool.ExcSql($"delete from Gen.Tipos_Telefonos where idcompania = {Ctool.cia} and id = {vcod}");
             if (Ctool.OcError)
             {
                 return;

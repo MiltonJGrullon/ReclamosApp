@@ -53,7 +53,7 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
             this.nombre});
-            this.dataGridView1.Location = new System.Drawing.Point(80, 105);
+            this.dataGridView1.Location = new System.Drawing.Point(38, 101);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
@@ -80,7 +80,7 @@
             // 
             this.btnborrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnborrar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnborrar.Location = new System.Drawing.Point(292, 296);
+            this.btnborrar.Location = new System.Drawing.Point(250, 292);
             this.btnborrar.Name = "btnborrar";
             this.btnborrar.Size = new System.Drawing.Size(92, 40);
             this.btnborrar.TabIndex = 101;
@@ -92,7 +92,7 @@
             // 
             this.btnmodificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnmodificar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnmodificar.Location = new System.Drawing.Point(186, 296);
+            this.btnmodificar.Location = new System.Drawing.Point(144, 292);
             this.btnmodificar.Name = "btnmodificar";
             this.btnmodificar.Size = new System.Drawing.Size(92, 40);
             this.btnmodificar.TabIndex = 100;
@@ -105,7 +105,7 @@
             this.btnsalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnsalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsalir.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnsalir.Location = new System.Drawing.Point(504, 296);
+            this.btnsalir.Location = new System.Drawing.Point(462, 292);
             this.btnsalir.Name = "btnsalir";
             this.btnsalir.Size = new System.Drawing.Size(92, 40);
             this.btnsalir.TabIndex = 99;
@@ -117,7 +117,7 @@
             // 
             this.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncancelar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncancelar.Location = new System.Drawing.Point(398, 296);
+            this.btncancelar.Location = new System.Drawing.Point(356, 292);
             this.btncancelar.Name = "btncancelar";
             this.btncancelar.Size = new System.Drawing.Size(92, 40);
             this.btncancelar.TabIndex = 98;
@@ -129,7 +129,7 @@
             // 
             this.btnsalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsalvar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnsalvar.Location = new System.Drawing.Point(80, 296);
+            this.btnsalvar.Location = new System.Drawing.Point(38, 292);
             this.btnsalvar.Name = "btnsalvar";
             this.btnsalvar.Size = new System.Drawing.Size(92, 40);
             this.btnsalvar.TabIndex = 97;
@@ -141,7 +141,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(79, 32);
+            this.label2.Location = new System.Drawing.Point(37, 28);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 16);
             this.label2.TabIndex = 96;
@@ -151,7 +151,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(79, 68);
+            this.label1.Location = new System.Drawing.Point(37, 64);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 16);
             this.label1.TabIndex = 95;
@@ -159,14 +159,14 @@
             // 
             // txtnombre
             // 
-            this.txtnombre.Location = new System.Drawing.Point(186, 68);
+            this.txtnombre.Location = new System.Drawing.Point(144, 64);
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(394, 20);
             this.txtnombre.TabIndex = 94;
             // 
             // txtcod
             // 
-            this.txtcod.Location = new System.Drawing.Point(186, 31);
+            this.txtcod.Location = new System.Drawing.Point(144, 27);
             this.txtcod.Name = "txtcod";
             this.txtcod.Size = new System.Drawing.Size(58, 20);
             this.txtcod.TabIndex = 93;
@@ -177,7 +177,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(674, 367);
+            this.ClientSize = new System.Drawing.Size(591, 357);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnborrar);
             this.Controls.Add(this.btnmodificar);
@@ -189,6 +189,7 @@
             this.Controls.Add(this.txtnombre);
             this.Controls.Add(this.txtcod);
             this.Name = "FrmTiposRedesSociales";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmTiposRedesSociales";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
