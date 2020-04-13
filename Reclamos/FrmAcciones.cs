@@ -26,7 +26,7 @@ namespace Reclamos
 
         private void llenargrid(string vfil = "")
         {
-            dtdata = Ctool.ExcSqlDT("select id,descripcion,estado from reclamos.acciones where idcompania = " + Ctool.cia);
+            dtdata = Ctool.ExcSqlDT("select id,descripcion,estado from reclamos.acciones where idcompania = " + Ctool.cia+vfil+" order by id desc");
             if (Ctool.OcError)
             {
                 return;

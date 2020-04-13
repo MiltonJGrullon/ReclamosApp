@@ -68,6 +68,10 @@
             this.txtparaje = new System.Windows.Forms.TextBox();
             this.txtcodcalle = new System.Windows.Forms.TextBox();
             this.txtcalle = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtcoddep
@@ -76,6 +80,8 @@
             this.txtcoddep.Name = "txtcoddep";
             this.txtcoddep.Size = new System.Drawing.Size(58, 20);
             this.txtcoddep.TabIndex = 0;
+            this.txtcoddep.TextChanged += new System.EventHandler(this.txtcoddep_TextChanged);
+            this.txtcoddep.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcoddep_KeyPress);
             // 
             // linkLabel1
             // 
@@ -91,6 +97,7 @@
             // txtapellido
             // 
             this.txtapellido.Location = new System.Drawing.Point(123, 86);
+            this.txtapellido.MaxLength = 100;
             this.txtapellido.Name = "txtapellido";
             this.txtapellido.Size = new System.Drawing.Size(450, 20);
             this.txtapellido.TabIndex = 2;
@@ -108,6 +115,7 @@
             // txtnombre
             // 
             this.txtnombre.Location = new System.Drawing.Point(123, 53);
+            this.txtnombre.MaxLength = 100;
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(450, 20);
             this.txtnombre.TabIndex = 1;
@@ -159,6 +167,7 @@
             // txtel
             // 
             this.txtel.Location = new System.Drawing.Point(123, 125);
+            this.txtel.MaxLength = 20;
             this.txtel.Name = "txtel";
             this.txtel.Size = new System.Drawing.Size(114, 20);
             this.txtel.TabIndex = 3;
@@ -176,6 +185,7 @@
             // txtcel
             // 
             this.txtcel.Location = new System.Drawing.Point(123, 161);
+            this.txtcel.MaxLength = 20;
             this.txtcel.Name = "txtcel";
             this.txtcel.Size = new System.Drawing.Size(114, 20);
             this.txtcel.TabIndex = 4;
@@ -193,6 +203,7 @@
             // txtemail
             // 
             this.txtemail.Location = new System.Drawing.Point(123, 194);
+            this.txtemail.MaxLength = 60;
             this.txtemail.Name = "txtemail";
             this.txtemail.Size = new System.Drawing.Size(335, 20);
             this.txtemail.TabIndex = 5;
@@ -211,7 +222,7 @@
             // 
             this.btnborrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnborrar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnborrar.Location = new System.Drawing.Point(251, 542);
+            this.btnborrar.Location = new System.Drawing.Point(250, 526);
             this.btnborrar.Name = "btnborrar";
             this.btnborrar.Size = new System.Drawing.Size(92, 40);
             this.btnborrar.TabIndex = 155;
@@ -222,18 +233,19 @@
             // 
             this.btnmodificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnmodificar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnmodificar.Location = new System.Drawing.Point(136, 542);
+            this.btnmodificar.Location = new System.Drawing.Point(135, 526);
             this.btnmodificar.Name = "btnmodificar";
             this.btnmodificar.Size = new System.Drawing.Size(92, 40);
             this.btnmodificar.TabIndex = 154;
             this.btnmodificar.Text = "Modificar";
             this.btnmodificar.UseVisualStyleBackColor = true;
+            this.btnmodificar.Click += new System.EventHandler(this.btnmodificar_Click);
             // 
             // btnsalir
             // 
             this.btnsalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsalir.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnsalir.Location = new System.Drawing.Point(481, 542);
+            this.btnsalir.Location = new System.Drawing.Point(480, 526);
             this.btnsalir.Name = "btnsalir";
             this.btnsalir.Size = new System.Drawing.Size(92, 40);
             this.btnsalir.TabIndex = 153;
@@ -245,23 +257,25 @@
             // 
             this.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncancelar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncancelar.Location = new System.Drawing.Point(366, 542);
+            this.btncancelar.Location = new System.Drawing.Point(365, 526);
             this.btncancelar.Name = "btncancelar";
             this.btncancelar.Size = new System.Drawing.Size(92, 40);
             this.btncancelar.TabIndex = 152;
             this.btncancelar.Text = "Cancelar";
             this.btncancelar.UseVisualStyleBackColor = true;
+            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
             // 
             // btnsalvar
             // 
             this.btnsalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsalvar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnsalvar.Location = new System.Drawing.Point(21, 542);
+            this.btnsalvar.Location = new System.Drawing.Point(20, 526);
             this.btnsalvar.Name = "btnsalvar";
             this.btnsalvar.Size = new System.Drawing.Size(92, 40);
             this.btnsalvar.TabIndex = 13;
             this.btnsalvar.Text = "Salvar";
             this.btnsalvar.UseVisualStyleBackColor = true;
+            this.btnsalvar.Click += new System.EventHandler(this.btnsalvar_Click);
             // 
             // linkLabel2
             // 
@@ -350,6 +364,7 @@
             // 
             this.txtnompais.Enabled = false;
             this.txtnompais.Location = new System.Drawing.Point(175, 234);
+            this.txtnompais.MaxLength = 100;
             this.txtnompais.Name = "txtnompais";
             this.txtnompais.Size = new System.Drawing.Size(283, 20);
             this.txtnompais.TabIndex = 164;
@@ -360,6 +375,8 @@
             this.txtcodpais.Name = "txtcodpais";
             this.txtcodpais.Size = new System.Drawing.Size(47, 20);
             this.txtcodpais.TabIndex = 6;
+            this.txtcodpais.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcodpais_KeyPress);
+            this.txtcodpais.Validating += new System.ComponentModel.CancelEventHandler(this.txtcodpais_Validating);
             // 
             // txtcodprovincia
             // 
@@ -367,11 +384,14 @@
             this.txtcodprovincia.Name = "txtcodprovincia";
             this.txtcodprovincia.Size = new System.Drawing.Size(47, 20);
             this.txtcodprovincia.TabIndex = 7;
+            this.txtcodprovincia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcodprovincia_KeyPress);
+            this.txtcodprovincia.Validating += new System.ComponentModel.CancelEventHandler(this.txtcodprovincia_Validating);
             // 
             // txtnomprovincia
             // 
             this.txtnomprovincia.Enabled = false;
             this.txtnomprovincia.Location = new System.Drawing.Point(175, 269);
+            this.txtnomprovincia.MaxLength = 100;
             this.txtnomprovincia.Name = "txtnomprovincia";
             this.txtnomprovincia.Size = new System.Drawing.Size(283, 20);
             this.txtnomprovincia.TabIndex = 166;
@@ -382,11 +402,14 @@
             this.txtcodmunicipio.Name = "txtcodmunicipio";
             this.txtcodmunicipio.Size = new System.Drawing.Size(47, 20);
             this.txtcodmunicipio.TabIndex = 8;
+            this.txtcodmunicipio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcodmunicipio_KeyPress);
+            this.txtcodmunicipio.Validating += new System.ComponentModel.CancelEventHandler(this.txtcodmunicipio_Validating);
             // 
             // txtmunicipio
             // 
             this.txtmunicipio.Enabled = false;
             this.txtmunicipio.Location = new System.Drawing.Point(175, 306);
+            this.txtmunicipio.MaxLength = 100;
             this.txtmunicipio.Name = "txtmunicipio";
             this.txtmunicipio.Size = new System.Drawing.Size(283, 20);
             this.txtmunicipio.TabIndex = 168;
@@ -397,11 +420,14 @@
             this.txtcodsector.Name = "txtcodsector";
             this.txtcodsector.Size = new System.Drawing.Size(47, 20);
             this.txtcodsector.TabIndex = 9;
+            this.txtcodsector.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcodsector_KeyPress);
+            this.txtcodsector.Validating += new System.ComponentModel.CancelEventHandler(this.txtcodsector_Validating);
             // 
             // txtsector
             // 
             this.txtsector.Enabled = false;
             this.txtsector.Location = new System.Drawing.Point(175, 341);
+            this.txtsector.MaxLength = 100;
             this.txtsector.Name = "txtsector";
             this.txtsector.Size = new System.Drawing.Size(283, 20);
             this.txtsector.TabIndex = 170;
@@ -412,11 +438,14 @@
             this.txtcodparaje.Name = "txtcodparaje";
             this.txtcodparaje.Size = new System.Drawing.Size(47, 20);
             this.txtcodparaje.TabIndex = 10;
+            this.txtcodparaje.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcodparaje_KeyPress);
+            this.txtcodparaje.Validating += new System.ComponentModel.CancelEventHandler(this.txtcodparaje_Validating);
             // 
             // txtparaje
             // 
             this.txtparaje.Enabled = false;
             this.txtparaje.Location = new System.Drawing.Point(175, 377);
+            this.txtparaje.MaxLength = 100;
             this.txtparaje.Name = "txtparaje";
             this.txtparaje.Size = new System.Drawing.Size(283, 20);
             this.txtparaje.TabIndex = 172;
@@ -427,21 +456,57 @@
             this.txtcodcalle.Name = "txtcodcalle";
             this.txtcodcalle.Size = new System.Drawing.Size(47, 20);
             this.txtcodcalle.TabIndex = 11;
+            this.txtcodcalle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcodcalle_KeyPress);
+            this.txtcodcalle.Validating += new System.ComponentModel.CancelEventHandler(this.txtcodcalle_Validating);
             // 
             // txtcalle
             // 
             this.txtcalle.Enabled = false;
             this.txtcalle.Location = new System.Drawing.Point(175, 413);
+            this.txtcalle.MaxLength = 100;
             this.txtcalle.Name = "txtcalle";
             this.txtcalle.Size = new System.Drawing.Size(283, 20);
             this.txtcalle.TabIndex = 174;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.Azure;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridView1.ColumnHeadersHeight = 25;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Codigo,
+            this.Nombre});
+            this.dataGridView1.Location = new System.Drawing.Point(579, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.Size = new System.Drawing.Size(272, 566);
+            this.dataGridView1.TabIndex = 175;
+            this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Id";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            this.Codigo.Width = 55;
+            // 
+            // Nombre
+            // 
+            this.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Nombre.HeaderText = "Nombre/s | Apellido/s";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
             // 
             // FrmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(601, 594);
+            this.ClientSize = new System.Drawing.Size(854, 571);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txtcodcalle);
             this.Controls.Add(this.txtcalle);
             this.Controls.Add(this.txtcodparaje);
@@ -486,6 +551,7 @@
             this.Name = "FrmClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de clientes";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -533,5 +599,8 @@
         private System.Windows.Forms.TextBox txtparaje;
         private System.Windows.Forms.TextBox txtcodcalle;
         private System.Windows.Forms.TextBox txtcalle;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
     }
 }

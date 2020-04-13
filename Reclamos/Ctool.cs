@@ -85,6 +85,19 @@ namespace Reclamos
             }
         }
 
+        public static bool valexitbl(string vtbl, string vwhere)
+        {
+            return Ctool.ExcSqlDT($"Select * from {vtbl} where {vwhere}").Rows.Count > 0;
+        }
 
+        public static string nomdir(string vtbl, string vwhere)
+        {
+            DataTable dtdir = Ctool.ExcSqlDT($"Select nombre from {vtbl} where  {vwhere}");
+            if(dtdir.Rows.Count > 0)
+                return dtdir.Rows[0][0].ToString().Trim();
+            else
+                return  "Error. No existe.";
+
+        }
     }
 }
