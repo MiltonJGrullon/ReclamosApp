@@ -80,5 +80,53 @@ namespace Reclamos
             FrmClientes frm = new FrmClientes();
             frm.ShowDialog();
         }
+
+        private void registroDeTiposDeCorreosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmTiposCorreos frm = new FrmTiposCorreos();
+            frm.ShowDialog();
+        }
+
+        private void registroDeTiposRedesSocialesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmTiposRedesSociales frm = new FrmTiposRedesSociales();
+            frm.ShowDialog();
+        }
+
+        private void tiposDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmTiposClientes frm = new FrmTiposClientes();
+            frm.ShowDialog();
+        }
+
+        private void tiposDeEmpleadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmTiposEmpleados frm = new FrmTiposEmpleados();
+            frm.ShowDialog();
+        }
+
+        private void tiposDireccionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmTiposDirecciones frm = new FrmTiposDirecciones();
+            frm.ShowDialog();
+        }
+
+        private void tiposDocumentacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmTiposDocumentaciones frm = new FrmTiposDocumentaciones();
+            frm.ShowDialog();
+        }
+
+        private void tipoTelefonosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmTiposTelefonos frm = new FrmTiposTelefonos();
+            frm.ShowDialog();
+        }
+
+        private void tiposUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmTiposUsuarios frm = new FrmTiposUsuarios();
+            frm.ShowDialog();
+        }
     }
 }

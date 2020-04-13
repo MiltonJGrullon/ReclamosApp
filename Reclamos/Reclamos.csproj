@@ -53,6 +53,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmTiposClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTiposClientes.Designer.cs">
+      <DependentUpon>FrmTiposClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTiposEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTiposEmpleados.Designer.cs">
+      <DependentUpon>FrmTiposEmpleados.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAcciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,11 +125,47 @@
     <Compile Include="FrmReclamosAcciones.Designer.cs">
       <DependentUpon>FrmReclamosAcciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmTiposCorreos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTiposCorreos.Designer.cs">
+      <DependentUpon>FrmTiposCorreos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTiposDirecciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTiposDirecciones.Designer.cs">
+      <DependentUpon>FrmTiposDirecciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTiposDocumentaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTiposDocumentaciones.Designer.cs">
+      <DependentUpon>FrmTiposDocumentaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmTiposReclamos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmTiposReclamos.Designer.cs">
       <DependentUpon>FrmTiposReclamos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTiposRedesSociales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTiposRedesSociales.Designer.cs">
+      <DependentUpon>FrmTiposRedesSociales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTiposTelefonos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTiposTelefonos.Designer.cs">
+      <DependentUpon>FrmTiposTelefonos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTiposUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTiposUsuarios.Designer.cs">
+      <DependentUpon>FrmTiposUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmUsuarios.cs">
       <SubType>Form</SubType>
@@ -129,6 +177,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTiposClientes.resx">
+      <DependentUpon>FrmTiposClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAcciones.resx">
       <DependentUpon>FrmAcciones.cs</DependentUpon>
@@ -160,8 +211,29 @@
     <EmbeddedResource Include="FrmReclamosAcciones.resx">
       <DependentUpon>FrmReclamosAcciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmTiposCorreos.resx">
+      <DependentUpon>FrmTiposCorreos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTiposDirecciones.resx">
+      <DependentUpon>FrmTiposDirecciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTiposDocumentaciones.resx">
+      <DependentUpon>FrmTiposDocumentaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTiposEmpleados.resx">
+      <DependentUpon>FrmTiposEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmTiposReclamos.resx">
       <DependentUpon>FrmTiposReclamos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTiposRedesSociales.resx">
+      <DependentUpon>FrmTiposRedesSociales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTiposTelefonos.resx">
+      <DependentUpon>FrmTiposTelefonos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTiposUsuarios.resx">
+      <DependentUpon>FrmTiposUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUsuarios.resx">
       <DependentUpon>FrmUsuarios.cs</DependentUpon>
@@ -192,6 +264,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\reclamos.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Procedures de gen.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

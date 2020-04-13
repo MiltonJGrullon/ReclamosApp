@@ -1,0 +1,217 @@
+﻿USE [ReclamosDb]
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+CREATE PROCEDURE [Gen].[proc_tcorreos]
+	 @idcompania int ,
+	 @id int ,
+	 @nombre varchar(80)
+	
+AS
+BEGIN 
+	SET NOCOUNT ON;
+	
+	if exists(select * from Gen.Tipos_Correos where idcompania = @idcompania and id =@id)
+	begin
+		update Gen.Tipos_Correos set nombre = @nombre where idcompania = @idcompania and id =@id
+	end
+	else
+	begin
+		insert into Gen.Tipos_Correos (idcompania,id,nombre) values(@idcompania,@id,@nombre)
+	end
+END
+
+
+
+
+
+
+USE [ReclamosDb]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+CREATE PROCEDURE [Gen].[proc_tredessociales]
+	 @idcompania int ,
+	 @id int ,
+	 @nombre varchar(80)
+	
+AS
+BEGIN 
+	SET NOCOUNT ON;
+	
+	if exists(select * from Gen.Tipos_RedesSociales where idcompania = @idcompania and id =@id)
+	begin
+		update Gen.Tipos_RedesSociales set nombre = @nombre where idcompania = @idcompania and id =@id
+	end
+	else
+	begin
+		insert into Gen.Tipos_RedesSociales (idcompania,id,nombre) values(@idcompania,@id,@nombre)
+	end
+END
+
+
+
+USE [ReclamosDb]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [Gen].[proc_tclientes]
+	 @idcompania int ,
+	 @id int ,
+	 @nombre varchar(50)
+	
+AS
+BEGIN 
+	SET NOCOUNT ON;
+	
+	if exists(select * from Gen.Tipos_Clientes where idcompania = @idcompania and id =@id)
+	begin
+		update Gen.Tipos_Clientes set nombre = @nombre where idcompania = @idcompania and id =@id
+	end
+	else
+	begin
+		insert into Gen.Tipos_Clientes (idcompania,id,nombre) values(@idcompania,@id,@nombre)
+	end
+END
+
+
+USE [ReclamosDb]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [Gen].[proc_templeados]
+	 @idcompania int ,
+	 @id int ,
+	 @descripcion varchar(100)
+	
+AS
+BEGIN 
+	SET NOCOUNT ON;
+	
+	if exists(select * from Gen.Tipos_Empleados where idcompania = @idcompania and id =@id)
+	begin
+		update Gen.Tipos_Empleados set descripcion = @descripcion where idcompania = @idcompania and id =@id
+	end
+	else
+	begin
+		insert into Gen.Tipos_Empleados(idcompania,id,descripcion) values(@idcompania,@id,@descripcion)
+	end
+END
+
+
+
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [Gen].[proc_tdirecciones]
+	 @idcompania int ,
+	 @id int ,
+	 @nombre varchar(80)
+	
+AS
+BEGIN 
+	SET NOCOUNT ON;
+	
+	if exists(select * from Gen.Tipos_Direcciones where idcompania = @idcompania and id =@id)
+	begin
+		update Gen.Tipos_Direcciones set nombre = @nombre where idcompania = @idcompania and id =@id
+	end
+	else
+	begin
+		insert into Gen.Tipos_Direcciones(idcompania,id,nombre) values(@idcompania,@id,@nombre)
+	end
+END
+
+
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [Gen].[proc_tdocumentaciones]
+	 @idcompania int ,
+	 @id int ,
+	 @nombre varchar(80)
+	
+AS
+BEGIN 
+	SET NOCOUNT ON;
+	
+	if exists(select * from Gen.Tipos_Documentaciones where idcompania = @idcompania and id =@id)
+	begin
+		update Gen.Tipos_Documentaciones set nombre = @nombre where idcompania = @idcompania and id =@id
+	end
+	else
+	begin
+		insert into Gen.Tipos_Documentaciones(idcompania,id,nombre) values(@idcompania,@id,@nombre)
+	end
+END
+
+
+
+
+
+
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [Gen].[proc_ttelefonos]
+	 @idcompania int ,
+	 @id int ,
+	 @nombre varchar(80)
+	
+AS
+BEGIN 
+	SET NOCOUNT ON;
+	
+	if exists(select * from Gen.Tipos_Telefonos where idcompania = @idcompania and id =@id)
+	begin
+		update Gen.Tipos_Telefonos set nombre = @nombre where idcompania = @idcompania and id =@id
+	end
+	else
+	begin
+		insert into Gen.Tipos_Telefonos(idcompania,id,nombre) values(@idcompania,@id,@nombre)
+	end
+END
+
+
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [Gen].[proc_tusuarios]
+	 @idcompania int ,
+	 @id int ,
+	 @nombre varchar(50),
+	 @nota varchar(max) null
+	
+AS
+BEGIN 
+	SET NOCOUNT ON;
+	
+	if exists(select * from Gen.Tipos_Usuarios where idcompania = @idcompania and id =@id)
+	begin
+		update Gen.Tipos_Usuarios  set nombre = @nombre, nota = @nota where idcompania = @idcompania and id =@id
+	end
+	else
+	begin
+		insert into Gen.Tipos_Usuarios (idcompania,id,nombre,nota) values(@idcompania,@id,@nombre,@nota)
+	end
+END

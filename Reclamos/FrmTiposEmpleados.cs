@@ -9,32 +9,34 @@ using System.Windows.Forms;
 
 namespace Reclamos
 {
-    public partial class FrmAcciones : Form
+    public partial class FrmTiposEmpleados : Form
     {
-        public FrmAcciones()
+        public FrmTiposEmpleados()
         {
             InitializeComponent();
             limpiar();
-            Codigo.DataPropertyName = "id";
-            Descripcion.DataPropertyName = "descripcion";
-            Estado.DataPropertyName = "estado";
+            id.DataPropertyName = "id";
+            descripcion.DataPropertyName = "descripcion";
+
             dataGridView1.AutoGenerateColumns = false;
             llenargrid();
             camposlec(true);
-
         }
+
 
         private void llenargrid(string vfil = "")
         {
-            dtdata = Ctool.ExcSqlDT("select id,descripcion,estado from reclamos.acciones where idcompania = " + Ctool.cia+vfil+" order by id desc");
+            dtdata = Ctool.ExcSqlDT("select id, descripcion from Gen.Tipos_Empleados where idcompania = " + Ctool.cia);
             if (Ctool.OcError)
             {
                 return;
             }
             dataGridView1.DataSource = dtdata;
-         }
+        }
 
         DataTable dtdata = new DataTable();
+
+
         private void btnsalir_Click(object sender, EventArgs e)
         {
             Close();
@@ -45,14 +47,12 @@ namespace Reclamos
             llenargrid();
             camposlec(true);
             limpiar();
-
-         }
+        }
 
         private void limpiar(bool a = true)
         {
             txtdescripcion.Text = string.Empty;
-            Rbact.Checked = true;
-            Rbinac.Checked = false;
+
 
             if (a)
             {
@@ -60,23 +60,22 @@ namespace Reclamos
                 txtcod.Focus();
             }
 
-                
+
         }
 
         private void txtcod_Validating(object sender, CancelEventArgs e)
         {
-            if(!string.IsNullOrEmpty(txtcod.Text))
-            llenarcampos();
+            if (!string.IsNullOrEmpty(txtcod.Text))
+                llenarcampos();
         }
 
         private void llenarcampos()
         {
-            DataTable dt = Ctool.ExcSqlDT("Select * from reclamos.acciones where idcompania = " + Ctool.cia + " and id = " + txtcod.Text.Trim());
+            DataTable dt = Ctool.ExcSqlDT("Select * from Gen.Tipos_Empleados where idcompania = " + Ctool.cia + " and id = " + txtcod.Text.Trim());
             if (dt.Rows.Count > 0)
             {
                 txtdescripcion.Text = dt.Rows[0]["descripcion"].ToString().Trim();
-                Rbact.Checked = Convert.ToBoolean(dt.Rows[0]["estado"]);
-                Rbinac.Checked = !Convert.ToBoolean(dt.Rows[0]["estado"]);
+
                 camposlec(false);
                 txtdescripcion.Focus();
             }
@@ -91,8 +90,7 @@ namespace Reclamos
         {
             txtcod.Enabled = vtip;
             txtdescripcion.Enabled = vtip;
-            Rbact.Enabled  = vtip;
-            Rbinac.Enabled = vtip;
+
             btnmodificar.Enabled = !vtip;
             btnsalvar.Enabled = vtip;
             btnborrar.Enabled = vtip;
@@ -104,12 +102,14 @@ namespace Reclamos
             txtdescripcion.Focus();
         }
 
-        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             txtcod.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString().Trim();
-            if(!string.IsNullOrEmpty(txtcod.Text))
-            llenarcampos();
+            if (!string.IsNullOrEmpty(txtcod.Text))
+                llenarcampos();
         }
+
+
 
         private void txtcod_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -144,11 +144,12 @@ namespace Reclamos
                 txtdescripcion.Focus();
                 return;
             }
-            string vcod = txtcod.Text.Trim(),vdes = txtdescripcion.Text.Trim();
-            int vest = Convert.ToInt32(Rbact.Checked);
-            Ctool.ExcSql($"exec reclamos.proc_acciones @idcomp = {Ctool.cia} ,@id = {vcod},@des = '{vdes}',@est = {vest} ");
+            string vcod = txtcod.Text.Trim(), vdes = txtdescripcion.Text.Trim();
+
+            Ctool.ExcSql($"exec Gen.proc_templeados @idcompania = {Ctool.cia} ,@id = {vcod},@descripcion = '{vdes}' ");
             if (Ctool.OcError)
             {
+
                 return;
             }
 
@@ -166,7 +167,7 @@ namespace Reclamos
             }
 
             string vcod = txtcod.Text.Trim();
-            Ctool.ExcSql($"delete from reclamos.acciones  where idcompania = {Ctool.cia} and id = {vcod}");
+            Ctool.ExcSql($"delete from Gen.Tipos_Empleados  where idcompania = {Ctool.cia} and id = {vcod}");
             if (Ctool.OcError)
             {
                 return;
@@ -174,12 +175,6 @@ namespace Reclamos
 
             llenargrid();
             limpiar();
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

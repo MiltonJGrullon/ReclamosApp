@@ -45,35 +45,44 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtidencargado = new System.Windows.Forms.TextBox();
             this.txtnomencargado = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Idencargado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Funcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnborrar
             // 
             this.btnborrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnborrar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnborrar.Location = new System.Drawing.Point(277, 252);
+            this.btnborrar.Location = new System.Drawing.Point(246, 437);
             this.btnborrar.Name = "btnborrar";
             this.btnborrar.Size = new System.Drawing.Size(92, 40);
             this.btnborrar.TabIndex = 52;
             this.btnborrar.Text = "Borrar";
             this.btnborrar.UseVisualStyleBackColor = true;
+            this.btnborrar.Click += new System.EventHandler(this.btnborrar_Click);
             // 
             // btnmodificar
             // 
             this.btnmodificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnmodificar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnmodificar.Location = new System.Drawing.Point(171, 252);
+            this.btnmodificar.Location = new System.Drawing.Point(140, 437);
             this.btnmodificar.Name = "btnmodificar";
             this.btnmodificar.Size = new System.Drawing.Size(92, 40);
             this.btnmodificar.TabIndex = 51;
             this.btnmodificar.Text = "Modificar";
             this.btnmodificar.UseVisualStyleBackColor = true;
+            this.btnmodificar.Click += new System.EventHandler(this.btnmodificar_Click);
             // 
             // btnsalir
             // 
             this.btnsalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsalir.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnsalir.Location = new System.Drawing.Point(489, 252);
+            this.btnsalir.Location = new System.Drawing.Point(458, 437);
             this.btnsalir.Name = "btnsalir";
             this.btnsalir.Size = new System.Drawing.Size(92, 40);
             this.btnsalir.TabIndex = 50;
@@ -85,23 +94,25 @@
             // 
             this.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncancelar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncancelar.Location = new System.Drawing.Point(383, 252);
+            this.btncancelar.Location = new System.Drawing.Point(352, 437);
             this.btncancelar.Name = "btncancelar";
             this.btncancelar.Size = new System.Drawing.Size(92, 40);
             this.btncancelar.TabIndex = 49;
             this.btncancelar.Text = "Cancelar";
             this.btncancelar.UseVisualStyleBackColor = true;
+            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
             // 
             // btnsalvar
             // 
             this.btnsalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsalvar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnsalvar.Location = new System.Drawing.Point(65, 252);
+            this.btnsalvar.Location = new System.Drawing.Point(34, 437);
             this.btnsalvar.Name = "btnsalvar";
             this.btnsalvar.Size = new System.Drawing.Size(92, 40);
             this.btnsalvar.TabIndex = 4;
             this.btnsalvar.Text = "Salvar";
             this.btnsalvar.UseVisualStyleBackColor = true;
+            this.btnsalvar.Click += new System.EventHandler(this.btnsalvar_Click);
             // 
             // txtcoddep
             // 
@@ -109,6 +120,7 @@
             this.txtcoddep.Name = "txtcoddep";
             this.txtcoddep.Size = new System.Drawing.Size(58, 20);
             this.txtcoddep.TabIndex = 0;
+            this.txtcoddep.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcoddep_KeyPress);
             // 
             // linkLabel1
             // 
@@ -217,12 +229,53 @@
             this.txtnomencargado.TabIndex = 64;
             this.txtnomencargado.TabStop = false;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Codigo,
+            this.Descripcion,
+            this.Idencargado,
+            this.Funcion,
+            this.Estado});
+            this.dataGridView1.Location = new System.Drawing.Point(18, 248);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(547, 161);
+            this.dataGridView1.TabIndex = 65;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
+            // 
+            // Idencargado
+            // 
+            this.Idencargado.HeaderText = "Idencargado";
+            this.Idencargado.Name = "Idencargado";
+            // 
+            // Funcion
+            // 
+            this.Funcion.HeaderText = "Funcion";
+            this.Funcion.Name = "Funcion";
+            // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            // 
             // FrmDepartamentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(641, 304);
+            this.ClientSize = new System.Drawing.Size(588, 489);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txtnomencargado);
             this.Controls.Add(this.txtidencargado);
             this.Controls.Add(this.label3);
@@ -244,6 +297,7 @@
             this.Name = "FrmDepartamentos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de departamentos";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -268,5 +322,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtidencargado;
         private System.Windows.Forms.TextBox txtnomencargado;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Idencargado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Funcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
     }
 }
