@@ -48,7 +48,7 @@ namespace Reclamos
         DataTable dtdata = new DataTable();
         private void llenargrid(string vfil = "")
         {
-            dtdata = Ctool.ExcSqlDT("select id,nombre+' '+Apellidos  from V_Clientes where idcompania = " + Ctool.cia + vfil + " order by id desc");
+            dtdata = Ctool.ExcSqlDT("select id,Rtrim(nombre)+' '+Rtrim(Apellidos) as Nombre  from V_Clientes where idcompania = " + Ctool.cia + vfil + " order by id desc");
             if (Ctool.OcError)
             {
                 return;
@@ -282,11 +282,11 @@ namespace Reclamos
                 {
                     if (Convert.ToInt32(item["idtipo"]) == 1)
                     {
-                        txtel.Text = dt.Rows[0]["telefono"].ToString();
+                        txtel.Text = item["telefono"].ToString();
                     }
                     else if(Convert.ToInt32(item["idtipo"]) == 2)
                     {
-                        txtcel.Text = dt.Rows[0]["telefono"].ToString();
+                        txtcel.Text = item["telefono"].ToString();
                     }
                 }
                 DataTable dtcor = Ctool.ExcSqlDT("Select * from Entidad.Correos where idcompania = " + Ctool.cia + " and idterceros = " + vterid);
@@ -320,13 +320,13 @@ namespace Reclamos
             }
 
             string vcod = txtcoddep.Text.Trim(), vnom = txtnombre.Text.Trim(), vape = txtapellido.Text.Trim(), vtel = txtel.Text.Trim(), vcel = txtcel.Text.Trim(), vcor = txtemail.Text.Trim(), vdir = txtdir.Text.Trim();
-            string vidpais = txtcodpais.Text.Trim(), vidprov = txtcodprovincia.Text.Trim(), vidmuni = txtcodmunicipio.Text.Trim();
-            string vidsec = txtcodsector.Text.Trim(), vidcalle = txtcodcalle.Text.Trim();
-            string vidpar = txtcodparaje.Text.Trim();
+            string vidpais = String.IsNullOrEmpty(txtcodpais.Text.Trim()) ? "0" : txtcodpais.Text.Trim(), vidprov = String.IsNullOrEmpty(txtcodprovincia.Text.Trim()) ? "0" : txtcodprovincia.Text.Trim();
+            string vidmuni = String.IsNullOrEmpty(txtcodmunicipio.Text.Trim()) ? "0" : txtcodmunicipio.Text.Trim(), vidsec = String.IsNullOrEmpty(txtcodsector.Text.Trim()) ? "0" : txtcodsector.Text.Trim();
+            string   vidcalle = String.IsNullOrEmpty(txtcodcalle.Text.Trim()) ? "0" : txtcodcalle.Text.Trim(),vidpar = String.IsNullOrEmpty(txtcodparaje.Text.Trim()) ? "0" : txtcodparaje.Text.Trim();
             string vest = "1";
             if(!Rbact.Checked) vest = "0";
 
-            if (!String.IsNullOrEmpty(vidpais))
+            if (vidpais != "0")
             if(!Ctool.valexitbl("Dir.Pais",$"id = {vidpais}"))
             {
 
@@ -335,7 +335,7 @@ namespace Reclamos
                 return;
             }
 
-            if (!String.IsNullOrEmpty(vidprov))
+            if (vidprov != "0")
             if(!Ctool.valexitbl("Dir.Provincias", $"idpais = {vidpais} and id = {vidprov}"))
             {
 
@@ -344,7 +344,7 @@ namespace Reclamos
                 return;
             }
 
-            if (!String.IsNullOrEmpty(vidmuni))
+            if (vidmuni != "0")
             if(!Ctool.valexitbl("Dir.Municipios", $"idpais = {vidpais} and idprovincia = {vidprov} and id = {vidmuni}"))
             {
 
@@ -352,7 +352,7 @@ namespace Reclamos
                 txtcodmunicipio.Focus();
                 return;
             }
-            if (!String.IsNullOrEmpty(vidsec))
+            if (vidsec != "0")
             if(!Ctool.valexitbl("Dir.Sector", $"idpais = {vidpais} and idprovincia = {vidprov} and  idmunicipio = {vidmuni} and id = {vidsec}"))
             {
 
@@ -361,7 +361,7 @@ namespace Reclamos
                 return;
             }
 
-            if (!String.IsNullOrEmpty(vidpar))
+            if (vidpar != "0")
             if (!Ctool.valexitbl("Dir.Paraje", $"idpais = {vidpais} and idprovincia = {vidprov} and  idmunicipio = {vidmuni} and idsector = {vidsec} and id = {vidpar}"))
             {
 
@@ -369,7 +369,7 @@ namespace Reclamos
                 txtcodparaje.Focus();
                 return;
             }
-            if (!String.IsNullOrEmpty(vidcalle))                
+            if (vidcalle != "0")                
             if(!Ctool.valexitbl("Dir.Calles", $"idpais = {vidpais} and idprovincia = {vidprov} and  idmunicipio = {vidmuni} and idsector = {vidsec} and idparaje = {vidpar} and id = {vidcalle}"))
             {
 
@@ -378,22 +378,22 @@ namespace Reclamos
                 return;
             }
 
-            if (!String.IsNullOrEmpty(vdir) && (String.IsNullOrEmpty(vidpais) || String.IsNullOrEmpty(vidprov) || String.IsNullOrEmpty(vidmuni) || String.IsNullOrEmpty(vidsec) || String.IsNullOrEmpty(vidpar) || String.IsNullOrEmpty(vidcalle)))
+            if (!String.IsNullOrEmpty(vdir) && (vidpais == "0" ||  vidprov == "0" || vidmuni == "0" || vidsec == "0" || vidpar == "0" ||  vidcalle == "0"))
             {
-                MessageBox.Show($"Debes completar todos los campos de (Pais,Provincia,Municipio,Sector,Paraje y calle) para especificar una direccion descriptiva, Favor Revisar.", "ReclamosApp", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Debes completar correctamente todos los campos de (Pais,Provincia,Municipio,Sector,Paraje y calle) para especificar una direccion descriptiva, Favor Revisar.", "ReclamosApp", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtdir.Focus();
                 return;
             }
 
-            if ((String.IsNullOrEmpty(vidpais) || String.IsNullOrEmpty(vidprov) || String.IsNullOrEmpty(vidmuni) || String.IsNullOrEmpty(vidsec) || String.IsNullOrEmpty(vidpar) || String.IsNullOrEmpty(vidcalle)) &&
-                (!String.IsNullOrEmpty(vidpais) || !String.IsNullOrEmpty(vidprov) || !String.IsNullOrEmpty(vidmuni) || !String.IsNullOrEmpty(vidsec) || !String.IsNullOrEmpty(vidpar) || !String.IsNullOrEmpty(vidcalle)))
+            if ((vidpais == "0" || vidprov == "0" || vidmuni == "0" || vidsec == "0" || vidpar == "0" || vidcalle == "0") &&
+                (vidpais != "0" || vidprov != "0" || vidmuni  != "0" || vidsec != "0" || vidpar != "0" || vidcalle != "0"))
             {
                 MessageBox.Show($"Debes completar todos los campos de (Pais,Provincia,Municipio,Sector,Paraje y calle) para especificar una direccion descriptiva, Favor Revisar.", "ReclamosApp", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtcodpais.Focus();
                 return;
             }
 
-            string v1 = $"exec Entidad.Proc_Clientes  @idcompania = {Ctool.cia} , @id = {Ctool.cia} , @idtipo = 1 , @nom = '{vnom}',";
+            string v1 = $"exec Entidad.Proc_Clientes  @idcompania = {Ctool.cia} , @id = {vcod} , @idtipo = 1 , @nom = '{vnom}',";
             v1 += $"@ape = '{vape}',@tel = '{vtel}',@cel ='{vcel}', @correo ='{vcor}',";
             v1 += $"@pais  = {vidpais} , @prov  = {vidprov} , @muni  = {vidmuni} ,@sec = {vidsec} , @par = {vidpar} ,";
             v1 += $"@calle = {vidcalle} , @dir = '{vdir}' , @est = {vest}";
@@ -403,6 +403,9 @@ namespace Reclamos
                 MessageBox.Show("Ocurrio un error en el procedimiento de salvar.");
                 return;
             }
+            llenargrid();
+            limpiar();
+
         }
 
         private void txtcodpais_Validating(object sender, CancelEventArgs e)
@@ -452,6 +455,39 @@ namespace Reclamos
                 txtcalle.Text = Ctool.nomdir("Dir.Calles", $" id = {txtcodcalle.Text.Trim()} and idparaje = {txtcodparaje.Text.Trim()} and idsector = {txtcodsector.Text.Trim()} and idmunicipio = {txtcodmunicipio.Text.Trim()} and idprovincia = {txtcodprovincia.Text.Trim()} and idpais = {txtcodpais.Text.Trim()}");
             else
                 txtcalle.Text = string.Empty;
+        }
+
+        private void txtcoddep_Validating(object sender, CancelEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtcoddep.Text))
+                llenarcampos();
+        }
+
+        private void btnborrar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtcoddep.Text.Trim()))
+            {
+                MessageBox.Show("Campo codigo es obligatorio, favor revisar.");
+                txtcoddep.Focus();
+                return;
+            }
+
+            if  (Ctool.ExcSqlDT($"select id  from V_Clientes where idcompania =  {Ctool.cia} and id = { txtcoddep.Text.Trim()} ").Rows.Count == 0) return;
+
+            DialogResult dresult = MessageBox.Show($"Esta seguro que desea borrar el id cliente : {txtcoddep.Text.Trim()} ?", "ReclamosApp", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dresult == DialogResult.Yes)
+            {
+
+                string veje = $"Update Entidad.clientes set Estado = 0 where idcompania =  {Ctool.cia} and id = { txtcoddep.Text.Trim()} ";
+                Ctool.ExcSql(veje);
+                if (Ctool.OcError)
+                {
+                    MessageBox.Show("Ocurrio un error en el proceso de desactivar cliente.");
+                    return;
+                }
+                llenargrid();
+                limpiar();
+            }
         }
     }
 }

@@ -76,12 +76,13 @@
             // 
             // txtcoddep
             // 
-            this.txtcoddep.Location = new System.Drawing.Point(123, 16);
+            this.txtcoddep.Location = new System.Drawing.Point(109, 16);
             this.txtcoddep.Name = "txtcoddep";
             this.txtcoddep.Size = new System.Drawing.Size(58, 20);
             this.txtcoddep.TabIndex = 0;
             this.txtcoddep.TextChanged += new System.EventHandler(this.txtcoddep_TextChanged);
             this.txtcoddep.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcoddep_KeyPress);
+            this.txtcoddep.Validating += new System.ComponentModel.CancelEventHandler(this.txtcoddep_Validating);
             // 
             // linkLabel1
             // 
@@ -96,7 +97,7 @@
             // 
             // txtapellido
             // 
-            this.txtapellido.Location = new System.Drawing.Point(123, 86);
+            this.txtapellido.Location = new System.Drawing.Point(109, 86);
             this.txtapellido.MaxLength = 100;
             this.txtapellido.Name = "txtapellido";
             this.txtapellido.Size = new System.Drawing.Size(450, 20);
@@ -114,7 +115,7 @@
             // 
             // txtnombre
             // 
-            this.txtnombre.Location = new System.Drawing.Point(123, 53);
+            this.txtnombre.Location = new System.Drawing.Point(109, 53);
             this.txtnombre.MaxLength = 100;
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(450, 20);
@@ -134,7 +135,7 @@
             // 
             this.Rbinac.AutoSize = true;
             this.Rbinac.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Rbinac.Location = new System.Drawing.Point(207, 486);
+            this.Rbinac.Location = new System.Drawing.Point(197, 486);
             this.Rbinac.Name = "Rbinac";
             this.Rbinac.Size = new System.Drawing.Size(67, 18);
             this.Rbinac.TabIndex = 144;
@@ -146,7 +147,7 @@
             this.Rbact.AutoSize = true;
             this.Rbact.Checked = true;
             this.Rbact.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Rbact.Location = new System.Drawing.Point(121, 486);
+            this.Rbact.Location = new System.Drawing.Point(111, 486);
             this.Rbact.Name = "Rbact";
             this.Rbact.Size = new System.Drawing.Size(59, 18);
             this.Rbact.TabIndex = 142;
@@ -166,7 +167,7 @@
             // 
             // txtel
             // 
-            this.txtel.Location = new System.Drawing.Point(123, 125);
+            this.txtel.Location = new System.Drawing.Point(109, 125);
             this.txtel.MaxLength = 20;
             this.txtel.Name = "txtel";
             this.txtel.Size = new System.Drawing.Size(114, 20);
@@ -184,7 +185,7 @@
             // 
             // txtcel
             // 
-            this.txtcel.Location = new System.Drawing.Point(123, 161);
+            this.txtcel.Location = new System.Drawing.Point(109, 161);
             this.txtcel.MaxLength = 20;
             this.txtcel.Name = "txtcel";
             this.txtcel.Size = new System.Drawing.Size(114, 20);
@@ -202,7 +203,7 @@
             // 
             // txtemail
             // 
-            this.txtemail.Location = new System.Drawing.Point(123, 194);
+            this.txtemail.Location = new System.Drawing.Point(109, 194);
             this.txtemail.MaxLength = 60;
             this.txtemail.Name = "txtemail";
             this.txtemail.Size = new System.Drawing.Size(335, 20);
@@ -228,6 +229,7 @@
             this.btnborrar.TabIndex = 155;
             this.btnborrar.Text = "Borrar";
             this.btnborrar.UseVisualStyleBackColor = true;
+            this.btnborrar.Click += new System.EventHandler(this.btnborrar_Click);
             // 
             // btnmodificar
             // 
@@ -355,7 +357,7 @@
             // 
             // txtdir
             // 
-            this.txtdir.Location = new System.Drawing.Point(122, 449);
+            this.txtdir.Location = new System.Drawing.Point(108, 449);
             this.txtdir.Name = "txtdir";
             this.txtdir.Size = new System.Drawing.Size(450, 20);
             this.txtdir.TabIndex = 12;
@@ -363,7 +365,7 @@
             // txtnompais
             // 
             this.txtnompais.Enabled = false;
-            this.txtnompais.Location = new System.Drawing.Point(175, 234);
+            this.txtnompais.Location = new System.Drawing.Point(161, 234);
             this.txtnompais.MaxLength = 100;
             this.txtnompais.Name = "txtnompais";
             this.txtnompais.Size = new System.Drawing.Size(283, 20);
@@ -371,7 +373,7 @@
             // 
             // txtcodpais
             // 
-            this.txtcodpais.Location = new System.Drawing.Point(122, 234);
+            this.txtcodpais.Location = new System.Drawing.Point(108, 234);
             this.txtcodpais.Name = "txtcodpais";
             this.txtcodpais.Size = new System.Drawing.Size(47, 20);
             this.txtcodpais.TabIndex = 6;
@@ -380,7 +382,7 @@
             // 
             // txtcodprovincia
             // 
-            this.txtcodprovincia.Location = new System.Drawing.Point(122, 269);
+            this.txtcodprovincia.Location = new System.Drawing.Point(108, 269);
             this.txtcodprovincia.Name = "txtcodprovincia";
             this.txtcodprovincia.Size = new System.Drawing.Size(47, 20);
             this.txtcodprovincia.TabIndex = 7;
@@ -390,7 +392,7 @@
             // txtnomprovincia
             // 
             this.txtnomprovincia.Enabled = false;
-            this.txtnomprovincia.Location = new System.Drawing.Point(175, 269);
+            this.txtnomprovincia.Location = new System.Drawing.Point(161, 269);
             this.txtnomprovincia.MaxLength = 100;
             this.txtnomprovincia.Name = "txtnomprovincia";
             this.txtnomprovincia.Size = new System.Drawing.Size(283, 20);
@@ -398,7 +400,7 @@
             // 
             // txtcodmunicipio
             // 
-            this.txtcodmunicipio.Location = new System.Drawing.Point(122, 306);
+            this.txtcodmunicipio.Location = new System.Drawing.Point(108, 306);
             this.txtcodmunicipio.Name = "txtcodmunicipio";
             this.txtcodmunicipio.Size = new System.Drawing.Size(47, 20);
             this.txtcodmunicipio.TabIndex = 8;
@@ -408,7 +410,7 @@
             // txtmunicipio
             // 
             this.txtmunicipio.Enabled = false;
-            this.txtmunicipio.Location = new System.Drawing.Point(175, 306);
+            this.txtmunicipio.Location = new System.Drawing.Point(161, 306);
             this.txtmunicipio.MaxLength = 100;
             this.txtmunicipio.Name = "txtmunicipio";
             this.txtmunicipio.Size = new System.Drawing.Size(283, 20);
@@ -416,7 +418,7 @@
             // 
             // txtcodsector
             // 
-            this.txtcodsector.Location = new System.Drawing.Point(122, 341);
+            this.txtcodsector.Location = new System.Drawing.Point(108, 341);
             this.txtcodsector.Name = "txtcodsector";
             this.txtcodsector.Size = new System.Drawing.Size(47, 20);
             this.txtcodsector.TabIndex = 9;
@@ -426,7 +428,7 @@
             // txtsector
             // 
             this.txtsector.Enabled = false;
-            this.txtsector.Location = new System.Drawing.Point(175, 341);
+            this.txtsector.Location = new System.Drawing.Point(161, 341);
             this.txtsector.MaxLength = 100;
             this.txtsector.Name = "txtsector";
             this.txtsector.Size = new System.Drawing.Size(283, 20);
@@ -434,7 +436,7 @@
             // 
             // txtcodparaje
             // 
-            this.txtcodparaje.Location = new System.Drawing.Point(122, 377);
+            this.txtcodparaje.Location = new System.Drawing.Point(108, 377);
             this.txtcodparaje.Name = "txtcodparaje";
             this.txtcodparaje.Size = new System.Drawing.Size(47, 20);
             this.txtcodparaje.TabIndex = 10;
@@ -444,7 +446,7 @@
             // txtparaje
             // 
             this.txtparaje.Enabled = false;
-            this.txtparaje.Location = new System.Drawing.Point(175, 377);
+            this.txtparaje.Location = new System.Drawing.Point(161, 377);
             this.txtparaje.MaxLength = 100;
             this.txtparaje.Name = "txtparaje";
             this.txtparaje.Size = new System.Drawing.Size(283, 20);
@@ -452,7 +454,7 @@
             // 
             // txtcodcalle
             // 
-            this.txtcodcalle.Location = new System.Drawing.Point(122, 413);
+            this.txtcodcalle.Location = new System.Drawing.Point(108, 413);
             this.txtcodcalle.Name = "txtcodcalle";
             this.txtcodcalle.Size = new System.Drawing.Size(47, 20);
             this.txtcodcalle.TabIndex = 11;
@@ -462,7 +464,7 @@
             // txtcalle
             // 
             this.txtcalle.Enabled = false;
-            this.txtcalle.Location = new System.Drawing.Point(175, 413);
+            this.txtcalle.Location = new System.Drawing.Point(161, 413);
             this.txtcalle.MaxLength = 100;
             this.txtcalle.Name = "txtcalle";
             this.txtcalle.Size = new System.Drawing.Size(283, 20);
@@ -482,6 +484,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(272, 566);
             this.dataGridView1.TabIndex = 175;
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
