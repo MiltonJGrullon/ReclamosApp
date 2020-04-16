@@ -234,6 +234,7 @@ namespace Reclamos
 
         private void btncancelar_Click(object sender, EventArgs e)
         {
+            camposlec(true);
             limpiar();
         }
 
