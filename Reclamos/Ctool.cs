@@ -11,6 +11,8 @@ namespace Reclamos
         public static string StrRutal = @"C:\Log";
         public static string sistema = "Sistema de Reclamos ReclaApp";
         public static string cia = "1";
+        public static string usuario = "Prueba";
+        
         public static string StrRuta(string Crp = "")
         {
             string r = StrRutal;

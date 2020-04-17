@@ -43,6 +43,7 @@ namespace Reclamos
             DataTable dt = Ctool.ExcSqlDT($"Select usuario from Entidad.Usuarios where idcompania =  { Ctool.cia }  and usuario = '{vuser}' and PwdCompare('{vpass}',clave) = 1");
             if (dt.Rows.Count > 0)
             {
+                Ctool.usuario = dt.Rows[0]["usuario"].ToString();
                 Hide();
                 FrmMenuPrincipal frm = new FrmMenuPrincipal();
                 frm.ShowDialog();
@@ -50,6 +51,7 @@ namespace Reclamos
             }
             else
             {
+                Ctool.usuario = String.Empty;
                 MessageBox.Show("Datos no son correctos, favor revisar.", Ctool.sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtusuario.Focus();
                 linkolvide.Visible = true;
