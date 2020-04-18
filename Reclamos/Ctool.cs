@@ -101,5 +101,17 @@ namespace Reclamos
                 return  "Error. No existe.";
 
         }
+
+        public static string desdep(string vtbl, string vwhere)
+        {
+            DataTable dtdes = Ctool.ExcSqlDT($"Select Descripcion from {vtbl} where  {vwhere}");
+            if (dtdes.Rows.Count > 0)
+                return dtdes.Rows[0][0].ToString().Trim();
+            else
+                return "Error. No existe.";
+
+        }
+
+       
     }
 }

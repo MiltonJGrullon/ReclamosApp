@@ -1,6 +1,6 @@
 ﻿namespace Reclamos
 {
-    partial class FrmTiposClientes
+    partial class FrmPais
     {
         /// <summary>
         /// Required designer variable.
@@ -53,13 +53,13 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
             this.nombre});
-            this.dataGridView1.Location = new System.Drawing.Point(40, 92);
+            this.dataGridView1.Location = new System.Drawing.Point(11, 94);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(511, 181);
-            this.dataGridView1.TabIndex = 102;
+            this.dataGridView1.TabIndex = 112;
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
             // id
@@ -80,10 +80,10 @@
             // 
             this.btnborrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnborrar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnborrar.Location = new System.Drawing.Point(252, 283);
+            this.btnborrar.Location = new System.Drawing.Point(223, 285);
             this.btnborrar.Name = "btnborrar";
             this.btnborrar.Size = new System.Drawing.Size(92, 40);
-            this.btnborrar.TabIndex = 101;
+            this.btnborrar.TabIndex = 111;
             this.btnborrar.Text = "Borrar";
             this.btnborrar.UseVisualStyleBackColor = true;
             this.btnborrar.Click += new System.EventHandler(this.btnborrar_Click);
@@ -92,10 +92,10 @@
             // 
             this.btnmodificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnmodificar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnmodificar.Location = new System.Drawing.Point(146, 283);
+            this.btnmodificar.Location = new System.Drawing.Point(117, 285);
             this.btnmodificar.Name = "btnmodificar";
             this.btnmodificar.Size = new System.Drawing.Size(92, 40);
-            this.btnmodificar.TabIndex = 100;
+            this.btnmodificar.TabIndex = 110;
             this.btnmodificar.Text = "Modificar";
             this.btnmodificar.UseVisualStyleBackColor = true;
             this.btnmodificar.Click += new System.EventHandler(this.btnmodificar_Click);
@@ -105,10 +105,10 @@
             this.btnsalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnsalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsalir.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnsalir.Location = new System.Drawing.Point(464, 283);
+            this.btnsalir.Location = new System.Drawing.Point(435, 285);
             this.btnsalir.Name = "btnsalir";
             this.btnsalir.Size = new System.Drawing.Size(92, 40);
-            this.btnsalir.TabIndex = 99;
+            this.btnsalir.TabIndex = 109;
             this.btnsalir.Text = "Salir";
             this.btnsalir.UseVisualStyleBackColor = true;
             this.btnsalir.Click += new System.EventHandler(this.btnsalir_Click);
@@ -117,10 +117,10 @@
             // 
             this.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncancelar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncancelar.Location = new System.Drawing.Point(358, 283);
+            this.btncancelar.Location = new System.Drawing.Point(329, 285);
             this.btncancelar.Name = "btncancelar";
             this.btncancelar.Size = new System.Drawing.Size(92, 40);
-            this.btncancelar.TabIndex = 98;
+            this.btncancelar.TabIndex = 108;
             this.btncancelar.Text = "Cancelar";
             this.btncancelar.UseVisualStyleBackColor = true;
             this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
@@ -129,10 +129,10 @@
             // 
             this.btnsalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsalvar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnsalvar.Location = new System.Drawing.Point(40, 283);
+            this.btnsalvar.Location = new System.Drawing.Point(11, 285);
             this.btnsalvar.Name = "btnsalvar";
             this.btnsalvar.Size = new System.Drawing.Size(92, 40);
-            this.btnsalvar.TabIndex = 97;
+            this.btnsalvar.TabIndex = 107;
             this.btnsalvar.Text = "Salvar";
             this.btnsalvar.UseVisualStyleBackColor = true;
             this.btnsalvar.Click += new System.EventHandler(this.btnsalvar_Click);
@@ -141,43 +141,43 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(39, 19);
+            this.label2.Location = new System.Drawing.Point(10, 21);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 16);
-            this.label2.TabIndex = 96;
+            this.label2.TabIndex = 106;
             this.label2.Text = "Código";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(39, 55);
+            this.label1.Location = new System.Drawing.Point(10, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 16);
-            this.label1.TabIndex = 95;
+            this.label1.TabIndex = 105;
             this.label1.Text = "Nombre";
             // 
             // txtnombre
             // 
-            this.txtnombre.Location = new System.Drawing.Point(146, 55);
+            this.txtnombre.Location = new System.Drawing.Point(117, 57);
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(394, 20);
-            this.txtnombre.TabIndex = 94;
+            this.txtnombre.TabIndex = 104;
             // 
             // txtcod
             // 
-            this.txtcod.Location = new System.Drawing.Point(146, 18);
+            this.txtcod.Location = new System.Drawing.Point(117, 20);
             this.txtcod.Name = "txtcod";
             this.txtcod.Size = new System.Drawing.Size(58, 20);
-            this.txtcod.TabIndex = 93;
+            this.txtcod.TabIndex = 103;
             this.txtcod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcod_KeyPress);
             this.txtcod.Validating += new System.ComponentModel.CancelEventHandler(this.txtcod_Validating);
             // 
-            // FrmTiposClientes
+            // FrmPais
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(594, 340);
+            this.ClientSize = new System.Drawing.Size(536, 344);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnborrar);
             this.Controls.Add(this.btnmodificar);
@@ -188,9 +188,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtnombre);
             this.Controls.Add(this.txtcod);
-            this.Name = "FrmTiposClientes";
+            this.Name = "FrmPais";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormTiposClientes";
+            this.Text = "Pais";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

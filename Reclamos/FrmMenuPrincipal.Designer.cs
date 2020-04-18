@@ -54,6 +54,7 @@
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirDelSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.paisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -89,7 +90,8 @@
             this.tiposDireccionesToolStripMenuItem,
             this.tiposDocumentacionesToolStripMenuItem,
             this.tipoTelefonosToolStripMenuItem,
-            this.tiposUsuariosToolStripMenuItem});
+            this.tiposUsuariosToolStripMenuItem,
+            this.paisToolStripMenuItem});
             this.entradasToolStripMenuItem.Name = "entradasToolStripMenuItem";
             this.entradasToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.entradasToolStripMenuItem.Text = "Entradas";
@@ -271,6 +273,13 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // paisToolStripMenuItem
+            // 
+            this.paisToolStripMenuItem.Name = "paisToolStripMenuItem";
+            this.paisToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
+            this.paisToolStripMenuItem.Text = "Pais";
+      //      this.paisToolStripMenuItem.Click += new System.EventHandler(this.paisToolStripMenuItem_Click);
+            // 
             // FrmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -320,5 +329,6 @@
         private System.Windows.Forms.ToolStripMenuItem tiposDocumentacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tipoTelefonosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tiposUsuariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem paisToolStripMenuItem;
     }
 }

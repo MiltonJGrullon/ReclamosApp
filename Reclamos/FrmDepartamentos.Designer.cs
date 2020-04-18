@@ -121,6 +121,7 @@
             this.txtcoddep.Size = new System.Drawing.Size(58, 20);
             this.txtcoddep.TabIndex = 0;
             this.txtcoddep.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcoddep_KeyPress);
+            this.txtcoddep.Validating += new System.ComponentModel.CancelEventHandler(this.txtcoddep_Validating);
             // 
             // linkLabel1
             // 
@@ -219,6 +220,8 @@
             this.txtidencargado.Name = "txtidencargado";
             this.txtidencargado.Size = new System.Drawing.Size(58, 20);
             this.txtidencargado.TabIndex = 2;
+            this.txtidencargado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtidencrgado);
+            this.txtidencargado.Validating += new System.ComponentModel.CancelEventHandler(this.txtidencargado_Validating);
             // 
             // txtnomencargado
             // 
@@ -243,6 +246,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(547, 161);
             this.dataGridView1.TabIndex = 65;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
             // Codigo
             // 
@@ -296,7 +300,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmDepartamentos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Registro de departamentos";
+            this.Text = "Registro del Departamento";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

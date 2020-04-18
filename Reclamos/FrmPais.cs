@@ -9,24 +9,23 @@ using System.Windows.Forms;
 
 namespace Reclamos
 {
-    public partial class FrmTiposEmpleados : Form
+    public partial class FrmPais : Form
     {
-        public FrmTiposEmpleados()
+        public FrmPais()
         {
             InitializeComponent();
             limpiar();
             id.DataPropertyName = "id";
-            descripcion.DataPropertyName = "descripcion";
-
+            nombre.DataPropertyName = "nombre";
+            
             dataGridView1.AutoGenerateColumns = false;
             llenargrid();
             camposlec(true);
         }
 
-
         private void llenargrid(string vfil = "")
         {
-            dtdata = Ctool.ExcSqlDT("select id, descripcion from Gen.Tipos_Empleados where idcompania = " + Ctool.cia);
+            dtdata = Ctool.ExcSqlDT("select id,nombre from Dir.Pais" + vfil + " order by id desc");
             if (Ctool.OcError)
             {
                 return;
@@ -35,8 +34,6 @@ namespace Reclamos
         }
 
         DataTable dtdata = new DataTable();
-
-
         private void btnsalir_Click(object sender, EventArgs e)
         {
             Close();
@@ -47,12 +44,13 @@ namespace Reclamos
             llenargrid();
             camposlec(true);
             limpiar();
+
         }
 
         private void limpiar(bool a = true)
         {
-            txtdescripcion.Text = string.Empty;
-
+            txtnombre.Text = string.Empty;
+           
 
             if (a)
             {
@@ -71,13 +69,14 @@ namespace Reclamos
 
         private void llenarcampos()
         {
-            DataTable dt = Ctool.ExcSqlDT("Select * from Gen.Tipos_Empleados where idcompania = " + Ctool.cia + " and id = " + txtcod.Text.Trim());
+         
+            DataTable dt = Ctool.ExcSqlDT("Select * from Dir.Pais where  id = " + txtcod.Text.Trim());
             if (dt.Rows.Count > 0)
             {
-                txtdescripcion.Text = dt.Rows[0]["descripcion"].ToString().Trim();
-
+                txtnombre.Text = dt.Rows[0]["nombre"].ToString().Trim();
+               
                 camposlec(false);
-                txtdescripcion.Focus();
+                txtnombre.Focus();
             }
             else
             {
@@ -89,8 +88,8 @@ namespace Reclamos
         private void camposlec(bool vtip = true)
         {
             txtcod.Enabled = vtip;
-            txtdescripcion.Enabled = vtip;
-
+            txtnombre.Enabled = vtip;
+           
             btnmodificar.Enabled = !vtip;
             btnsalvar.Enabled = vtip;
             btnborrar.Enabled = vtip;
@@ -99,15 +98,15 @@ namespace Reclamos
         private void btnmodificar_Click(object sender, EventArgs e)
         {
             camposlec(true);
-            txtdescripcion.Focus();
+            txtnombre.Focus();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
-
+            txtcod.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString().Trim();
+            if (!string.IsNullOrEmpty(txtcod.Text))
+                llenarcampos();
         }
-
-
 
         private void txtcod_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -136,18 +135,17 @@ namespace Reclamos
                 txtcod.Focus();
                 return;
             }
-            if (string.IsNullOrEmpty(txtdescripcion.Text.Trim()))
+            if (string.IsNullOrEmpty(txtnombre.Text.Trim()))
             {
-                MessageBox.Show("Campo descripcion es obligatorio, favor revisar.");
-                txtdescripcion.Focus();
+                MessageBox.Show("Campo nombre es obligatorio, favor revisar.");
+                txtnombre.Focus();
                 return;
             }
-            string vcod = txtcod.Text.Trim(), vdes = txtdescripcion.Text.Trim();
-
-            Ctool.ExcSql($"exec Gen.proc_templeados @idcompania = {Ctool.cia} ,@id = {vcod},@descripcion = '{vdes}' ");
+            string vcod = txtcod.Text.Trim(), vdes = txtnombre.Text.Trim();
+           
+            Ctool.ExcSql($"exec Dir.proc_pais @id = {vcod},@nombre = '{vdes}' ");
             if (Ctool.OcError)
             {
-
                 return;
             }
 
@@ -165,7 +163,8 @@ namespace Reclamos
             }
 
             string vcod = txtcod.Text.Trim();
-            Ctool.ExcSql($"delete from Gen.Tipos_Empleados  where idcompania = {Ctool.cia} and id = {vcod}");
+           
+            Ctool.ExcSql($"delete from Dir.Pais where id = {vcod}");
             if (Ctool.OcError)
             {
                 return;
@@ -173,13 +172,7 @@ namespace Reclamos
 
             llenargrid();
             limpiar();
-        }
 
-        private void dataGridView1_DoubleClick(object sender, EventArgs e)
-        {
-            txtcod.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString().Trim();
-            if (!string.IsNullOrEmpty(txtcod.Text))
-                llenarcampos();
         }
     }
 }
