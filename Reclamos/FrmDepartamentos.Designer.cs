@@ -109,7 +109,7 @@
             this.btnsalvar.Location = new System.Drawing.Point(34, 437);
             this.btnsalvar.Name = "btnsalvar";
             this.btnsalvar.Size = new System.Drawing.Size(92, 40);
-            this.btnsalvar.TabIndex = 4;
+            this.btnsalvar.TabIndex = 5;
             this.btnsalvar.Text = "Salvar";
             this.btnsalvar.UseVisualStyleBackColor = true;
             this.btnsalvar.Click += new System.EventHandler(this.btnsalvar_Click);
@@ -234,6 +234,9 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigo,
@@ -243,8 +246,11 @@
             this.Estado});
             this.dataGridView1.Location = new System.Drawing.Point(18, 248);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(547, 161);
-            this.dataGridView1.TabIndex = 65;
+            this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
@@ -252,26 +258,32 @@
             // 
             this.Codigo.HeaderText = "Codigo";
             this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
             // 
             // Descripcion
             // 
+            this.Descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Descripcion.HeaderText = "Descripcion";
             this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
             // 
             // Idencargado
             // 
             this.Idencargado.HeaderText = "Idencargado";
             this.Idencargado.Name = "Idencargado";
+            this.Idencargado.ReadOnly = true;
             // 
             // Funcion
             // 
             this.Funcion.HeaderText = "Funcion";
             this.Funcion.Name = "Funcion";
+            this.Funcion.ReadOnly = true;
             // 
             // Estado
             // 
             this.Estado.HeaderText = "Estado";
             this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
             // 
             // FrmDepartamentos
             // 

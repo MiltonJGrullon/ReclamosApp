@@ -102,6 +102,16 @@ namespace Reclamos
 
         }
 
+        public static string nomentidades(string vtbl, string vwhere)
+        {
+            DataTable dtent = Ctool.ExcSqlDT($"Select nombre+' '+apellidos from {vtbl} where  {vwhere}");
+            if (dtent.Rows.Count > 0)
+                return dtent.Rows[0][0].ToString().Trim();
+            else
+                return "Error. No existe.";
+
+        }
+
         public static string desdep(string vtbl, string vwhere)
         {
             DataTable dtdes = Ctool.ExcSqlDT($"Select Descripcion from {vtbl} where  {vwhere}");

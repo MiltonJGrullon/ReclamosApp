@@ -94,7 +94,7 @@ namespace Reclamos
             {
                 txtdescripcion.Text = dt.Rows[0]["Descripcion"].ToString();
                 txtidencargado.Text = dt.Rows[0]["Idencargado"].ToString();
-                txtnomencargado.Text = dt.Rows[0]["nombre"].ToString();
+                txtnomencargado.Text = dt.Rows[0]["nombre"].ToString()+" "+dt.Rows[0]["apellidos"].ToString();
                 txtfuncion.Text = dt.Rows[0]["Funcion"].ToString();
                 Rbact.Checked = Convert.ToBoolean(dt.Rows[0]["Estado"]);
                 Rbinac.Checked = !Convert.ToBoolean(dt.Rows[0]["Estado"]);
@@ -116,7 +116,6 @@ namespace Reclamos
             txtcoddep.Enabled = vtip;
             txtdescripcion.Enabled = vtip;
             txtidencargado.Enabled = vtip;
-            txtnomencargado.Enabled = vtip;
             txtfuncion.Enabled = vtip;
 
             Rbact.Enabled = vtip;
@@ -221,8 +220,7 @@ namespace Reclamos
 
 
 
-            string v1 = $"exec reclamos.Proc_Departamentos  @idcom = {Ctool.cia} , @id = {vcod} , @Descripcion = '{vdes}' , @funcion= '{vfun}',";
-
+            string v1 = $"exec reclamos.Proc_Departamentos  @idcom = {Ctool.cia} , @id = {vcod} , @Des = '{vdes}' , @funcion= '{vfun}',";
             v1 += $"@idenc  = {viden} ,";
             v1 += $" @est = {vest}";
 
@@ -243,7 +241,7 @@ namespace Reclamos
         private void txtidencargado_Validating(object sender, CancelEventArgs e)
         {
             if (!String.IsNullOrEmpty(txtidencargado.Text.Trim()))
-                txtidencargado.Text = Ctool.nomdir("Entidad.Empleados", $"id = {txtidencargado.Text.Trim()}");
+                txtnomencargado.Text = Ctool.nomentidades("V_EMPLEADOS", $"idcompania = {Ctool.cia} and id = {txtidencargado.Text.Trim()}");
             else
                 txtnomencargado.Text = string.Empty;
 
