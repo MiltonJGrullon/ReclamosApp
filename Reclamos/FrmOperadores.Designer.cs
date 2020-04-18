@@ -53,6 +53,10 @@
             this.TSalida = new System.Windows.Forms.DateTimePicker();
             this.BreakF = new System.Windows.Forms.DateTimePicker();
             this.Tbreaki = new System.Windows.Forms.DateTimePicker();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnborrar
@@ -65,6 +69,7 @@
             this.btnborrar.TabIndex = 129;
             this.btnborrar.Text = "Borrar";
             this.btnborrar.UseVisualStyleBackColor = true;
+            this.btnborrar.Click += new System.EventHandler(this.btnborrar_Click);
             // 
             // btnmodificar
             // 
@@ -76,6 +81,7 @@
             this.btnmodificar.TabIndex = 128;
             this.btnmodificar.Text = "Modificar";
             this.btnmodificar.UseVisualStyleBackColor = true;
+            this.btnmodificar.Click += new System.EventHandler(this.btnmodificar_Click);
             // 
             // btnsalir
             // 
@@ -99,6 +105,7 @@
             this.btncancelar.TabIndex = 126;
             this.btncancelar.Text = "Cancelar";
             this.btncancelar.UseVisualStyleBackColor = true;
+            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
             // 
             // btnsalvar
             // 
@@ -110,6 +117,7 @@
             this.btnsalvar.TabIndex = 125;
             this.btnsalvar.Text = "Salvar";
             this.btnsalvar.UseVisualStyleBackColor = true;
+            this.btnsalvar.Click += new System.EventHandler(this.btnsalvar_Click);
             // 
             // txtcod
             // 
@@ -117,6 +125,8 @@
             this.txtcod.Name = "txtcod";
             this.txtcod.Size = new System.Drawing.Size(58, 20);
             this.txtcod.TabIndex = 130;
+            this.txtcod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcod_KeyPress);
+            this.txtcod.Validating += new System.ComponentModel.CancelEventHandler(this.txtcod_Validating);
             // 
             // linkLabel1
             // 
@@ -161,6 +171,8 @@
             this.txtiddep.Name = "txtiddep";
             this.txtiddep.Size = new System.Drawing.Size(58, 20);
             this.txtiddep.TabIndex = 136;
+            this.txtiddep.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtiddep_KeyPress);
+            this.txtiddep.Validating += new System.ComponentModel.CancelEventHandler(this.txtiddep_Validating);
             // 
             // label4
             // 
@@ -296,12 +308,46 @@
             this.Tbreaki.Size = new System.Drawing.Size(92, 20);
             this.Tbreaki.TabIndex = 148;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.Azure;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridView1.ColumnHeadersHeight = 25;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Codigo,
+            this.Nombre});
+            this.dataGridView1.Location = new System.Drawing.Point(507, 11);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(301, 236);
+            this.dataGridView1.TabIndex = 176;
+            this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Id";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            this.Codigo.Width = 55;
+            // 
+            // Nombre
+            // 
+            this.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Nombre.HeaderText = "Nombre/s | Apellido/s";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
             // FrmOperadores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(582, 332);
+            this.ClientSize = new System.Drawing.Size(831, 329);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.BreakF);
             this.Controls.Add(this.Tbreaki);
             this.Controls.Add(this.TSalida);
@@ -332,6 +378,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de operadores (Empleados)";
             this.Load += new System.EventHandler(this.FrmOperadores_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -364,5 +411,8 @@
         private System.Windows.Forms.DateTimePicker TSalida;
         private System.Windows.Forms.DateTimePicker BreakF;
         private System.Windows.Forms.DateTimePicker Tbreaki;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
     }
 }
