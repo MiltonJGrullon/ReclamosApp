@@ -34,7 +34,7 @@
             this.btncancelar = new System.Windows.Forms.Button();
             this.btnsalvar = new System.Windows.Forms.Button();
             this.txtdesaccion = new System.Windows.Forms.TextBox();
-            this.txtcodaccion = new System.Windows.Forms.TextBox();
+            this.txtidaccion = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtnomreclamo = new System.Windows.Forms.TextBox();
             this.txtidreclamo = new System.Windows.Forms.TextBox();
@@ -45,9 +45,10 @@
             this.Rbact = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CodigoRe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreAc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CodigoAc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreRe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.numrepresenta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -62,6 +63,7 @@
             this.btnborrar.TabIndex = 97;
             this.btnborrar.Text = "Borrar";
             this.btnborrar.UseVisualStyleBackColor = true;
+            this.btnborrar.Click += new System.EventHandler(this.btnborrar_Click);
             // 
             // btnmodificar
             // 
@@ -73,6 +75,7 @@
             this.btnmodificar.TabIndex = 96;
             this.btnmodificar.Text = "Modificar";
             this.btnmodificar.UseVisualStyleBackColor = true;
+            this.btnmodificar.Click += new System.EventHandler(this.btnmodificar_Click);
             // 
             // btnsalir
             // 
@@ -96,6 +99,7 @@
             this.btncancelar.TabIndex = 94;
             this.btncancelar.Text = "Cancelar";
             this.btncancelar.UseVisualStyleBackColor = true;
+            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
             // 
             // btnsalvar
             // 
@@ -107,6 +111,7 @@
             this.btnsalvar.TabIndex = 3;
             this.btnsalvar.Text = "Salvar";
             this.btnsalvar.UseVisualStyleBackColor = true;
+            this.btnsalvar.Click += new System.EventHandler(this.btnsalvar_Click);
             // 
             // txtdesaccion
             // 
@@ -117,12 +122,14 @@
             this.txtdesaccion.TabIndex = 103;
             this.txtdesaccion.TabStop = false;
             // 
-            // txtcodaccion
+            // txtidaccion
             // 
-            this.txtcodaccion.Location = new System.Drawing.Point(121, 46);
-            this.txtcodaccion.Name = "txtcodaccion";
-            this.txtcodaccion.Size = new System.Drawing.Size(58, 20);
-            this.txtcodaccion.TabIndex = 1;
+            this.txtidaccion.Location = new System.Drawing.Point(121, 46);
+            this.txtidaccion.Name = "txtidaccion";
+            this.txtidaccion.Size = new System.Drawing.Size(58, 20);
+            this.txtidaccion.TabIndex = 1;
+            this.txtidaccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtidaccion_KeyPress);
+            this.txtidaccion.Validating += new System.ComponentModel.CancelEventHandler(this.txtidaccion_Validating);
             // 
             // label4
             // 
@@ -150,6 +157,8 @@
             this.txtidreclamo.Name = "txtidreclamo";
             this.txtidreclamo.Size = new System.Drawing.Size(58, 20);
             this.txtidreclamo.TabIndex = 0;
+            this.txtidreclamo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtidreclamo_KeyPress);
+            this.txtidreclamo.Validating += new System.ComponentModel.CancelEventHandler(this.txtidreclamo_Validating);
             // 
             // label3
             // 
@@ -199,6 +208,7 @@
             this.Rbact.Name = "Rbact";
             this.Rbact.Size = new System.Drawing.Size(59, 18);
             this.Rbact.TabIndex = 107;
+            this.Rbact.TabStop = true;
             this.Rbact.Text = "Activo";
             this.Rbact.UseVisualStyleBackColor = true;
             // 
@@ -219,36 +229,46 @@
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Codigo,
-            this.Nombre,
-            this.estado});
+            this.CodigoRe,
+            this.NombreAc,
+            this.CodigoAc,
+            this.NombreRe});
             this.dataGridView1.Location = new System.Drawing.Point(19, 205);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(542, 187);
-            this.dataGridView1.TabIndex = 109;
+            this.dataGridView1.TabIndex = 4;
+            this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
-            // Codigo
+            // CodigoRe
             // 
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
-            this.Codigo.Width = 120;
+            this.CodigoRe.HeaderText = "";
+            this.CodigoRe.Name = "CodigoRe";
+            this.CodigoRe.ReadOnly = true;
+            this.CodigoRe.Width = 40;
             // 
-            // Nombre
+            // NombreAc
             // 
-            this.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Nombre.HeaderText = "Nombre de acciones";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
+            this.NombreAc.HeaderText = "Reclamos";
+            this.NombreAc.Name = "NombreAc";
+            this.NombreAc.ReadOnly = true;
+            this.NombreAc.Width = 215;
             // 
-            // estado
+            // CodigoAc
             // 
-            this.estado.HeaderText = "S";
-            this.estado.Name = "estado";
-            this.estado.ReadOnly = true;
-            this.estado.Width = 30;
+            this.CodigoAc.HeaderText = "";
+            this.CodigoAc.Name = "CodigoAc";
+            this.CodigoAc.ReadOnly = true;
+            this.CodigoAc.Width = 40;
+            // 
+            // NombreRe
+            // 
+            this.NombreRe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NombreRe.HeaderText = "Acciones";
+            this.NombreRe.Name = "NombreRe";
+            this.NombreRe.ReadOnly = true;
             // 
             // FrmReclamosAcciones
             // 
@@ -263,7 +283,7 @@
             this.Controls.Add(this.numrepresenta);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtdesaccion);
-            this.Controls.Add(this.txtcodaccion);
+            this.Controls.Add(this.txtidaccion);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtnomreclamo);
             this.Controls.Add(this.txtidreclamo);
@@ -291,7 +311,7 @@
         private System.Windows.Forms.Button btncancelar;
         private System.Windows.Forms.Button btnsalvar;
         private System.Windows.Forms.TextBox txtdesaccion;
-        private System.Windows.Forms.TextBox txtcodaccion;
+        private System.Windows.Forms.TextBox txtidaccion;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtnomreclamo;
         private System.Windows.Forms.TextBox txtidreclamo;
@@ -302,8 +322,9 @@
         private System.Windows.Forms.RadioButton Rbact;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodigoRe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreAc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodigoAc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreRe;
     }
 }
