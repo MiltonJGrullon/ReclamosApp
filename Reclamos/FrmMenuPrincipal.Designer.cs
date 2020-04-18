@@ -278,7 +278,7 @@
             this.paisToolStripMenuItem.Name = "paisToolStripMenuItem";
             this.paisToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
             this.paisToolStripMenuItem.Text = "Pais";
-            this.paisToolStripMenuItem.Click += new System.EventHandler(this.paisToolStripMenuItem_Click);
+      //      this.paisToolStripMenuItem.Click += new System.EventHandler(this.paisToolStripMenuItem_Click);
             // 
             // FrmMenuPrincipal
             // 

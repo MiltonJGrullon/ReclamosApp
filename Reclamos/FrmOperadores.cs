@@ -220,18 +220,18 @@ namespace Reclamos
             string vcod = txtcod.Text.Trim(),
                 vnom = txtnombre.Text.Trim(),
                 vape = txtapellido.Text.Trim(),
-                vent = Tentrada.Text.Trim(),
-                vsal = TSalida.Text.Trim(),
-                vbrei = Tbreaki.Text.Trim(),
-                vbres = BreakF.Text.Trim();
+                vent = Tentrada.Value.ToString("HH:mm:ss"),
+                vsal = TSalida.Value.ToString("HH:mm:ss"),
+                vbrei = Tbreaki.Value.ToString("HH:mm:ss"),
+                vbres = BreakF.Value.ToString("HH:mm:ss");
 
-            string viddep = String.IsNullOrEmpty(txtiddep.Text.Trim()) ? "0" : txtiddep.Text.Trim();
          
             string vest = "1";
             if (!Rbact.Checked) vest = "0";
 
-            if (viddep != "0")
-                if (!Ctool.valexitbl("reclamos.Departamentos", $"Id = {viddep}"))
+            string viddep = String.IsNullOrEmpty(txtiddep.Text.Trim()) ? "0" : txtiddep.Text.Trim();
+
+            if (!Ctool.valexitbl("reclamos.Departamentos", $"idcompania = {Ctool.cia} and Id = {viddep}"))
                 {
 
                     MessageBox.Show($"Reclamo No. {viddep} No existe, Favor Revisar.", "ReclamosApp", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -241,25 +241,24 @@ namespace Reclamos
 
            
 
-           if (!String.IsNullOrEmpty(viddep) && (viddep == "0"))
-            {
-                MessageBox.Show($"Debes completar correctamente todos el campo del (Departamento), Favor Revisar.", "ReclamosApp", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtiddep.Focus();
-                return;
-            }
+           //if (!String.IsNullOrEmpty(viddep) && (viddep == "0"))
+           // {
+           //     MessageBox.Show($"Debes completar correctamente todos el campo del (Departamento), Favor Revisar.", "ReclamosApp", MessageBoxButtons.OK, MessageBoxIcon.Error);
+           //     txtiddep.Focus();
+           //     return;
+           // }
 
-            if ((viddep == "0" ) &&
-                (viddep != "0" ))
-            {
-                MessageBox.Show($"Debes completar el campos de (Departamento), Favor Revisar.", "ReclamosApp", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtiddep.Focus();
-                return;
-            }
+           // if ((viddep == "0" ) &&
+           //     (viddep != "0" ))
+           // {
+           //     MessageBox.Show($"Debes completar el campos de (Departamento), Favor Revisar.", "ReclamosApp", MessageBoxButtons.OK, MessageBoxIcon.Error);
+           //     txtiddep.Focus();
+           //     return;
+           // }
 
             string v1 = $"exec Entidad.proc_empleados  @idcompania = {Ctool.cia} , @id = {vcod} , @idtipo = 1 , @nom = '{vnom}',";
-            v1 += $"@ape = '{vape}',@iddep = '{viddep}',@horaentrada ='{vent}', @horasalida ='{vsal}',";
-            v1 += $"@horabreaki  = {vbrei} , @horabreaks  = {vbres} , @est  = {vest}";
-            
+            v1 += $"@ape = '{vape}',@iddep = {viddep},@horaentrada ='{vent}', @horasalida ='{vsal}',";
+            v1 += $"@horabreaki  = '{vbrei}' , @horabreaks  = '{vbres}' , @est  = {vest}";
             Ctool.ExcSql(v1);
             if (Ctool.OcError)
             {

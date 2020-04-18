@@ -114,7 +114,7 @@
             this.btnsalvar.Location = new System.Drawing.Point(18, 276);
             this.btnsalvar.Name = "btnsalvar";
             this.btnsalvar.Size = new System.Drawing.Size(92, 40);
-            this.btnsalvar.TabIndex = 125;
+            this.btnsalvar.TabIndex = 8;
             this.btnsalvar.Text = "Salvar";
             this.btnsalvar.UseVisualStyleBackColor = true;
             this.btnsalvar.Click += new System.EventHandler(this.btnsalvar_Click);
@@ -124,7 +124,7 @@
             this.txtcod.Location = new System.Drawing.Point(133, 13);
             this.txtcod.Name = "txtcod";
             this.txtcod.Size = new System.Drawing.Size(58, 20);
-            this.txtcod.TabIndex = 130;
+            this.txtcod.TabIndex = 0;
             this.txtcod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcod_KeyPress);
             this.txtcod.Validating += new System.ComponentModel.CancelEventHandler(this.txtcod_Validating);
             // 
@@ -144,7 +144,7 @@
             this.txtnombre.Location = new System.Drawing.Point(133, 47);
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(263, 20);
-            this.txtnombre.TabIndex = 132;
+            this.txtnombre.TabIndex = 1;
             // 
             // label1
             // 
@@ -170,7 +170,7 @@
             this.txtiddep.Location = new System.Drawing.Point(133, 115);
             this.txtiddep.Name = "txtiddep";
             this.txtiddep.Size = new System.Drawing.Size(58, 20);
-            this.txtiddep.TabIndex = 136;
+            this.txtiddep.TabIndex = 3;
             this.txtiddep.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtiddep_KeyPress);
             this.txtiddep.Validating += new System.ComponentModel.CancelEventHandler(this.txtiddep_Validating);
             // 
@@ -200,7 +200,7 @@
             this.txtapellido.Location = new System.Drawing.Point(133, 81);
             this.txtapellido.Name = "txtapellido";
             this.txtapellido.Size = new System.Drawing.Size(263, 20);
-            this.txtapellido.TabIndex = 134;
+            this.txtapellido.TabIndex = 2;
             // 
             // Rbinac
             // 
@@ -282,7 +282,7 @@
             this.Tentrada.Location = new System.Drawing.Point(133, 154);
             this.Tentrada.Name = "Tentrada";
             this.Tentrada.Size = new System.Drawing.Size(92, 20);
-            this.Tentrada.TabIndex = 146;
+            this.Tentrada.TabIndex = 4;
             // 
             // TSalida
             // 
@@ -290,7 +290,7 @@
             this.TSalida.Location = new System.Drawing.Point(329, 156);
             this.TSalida.Name = "TSalida";
             this.TSalida.Size = new System.Drawing.Size(92, 20);
-            this.TSalida.TabIndex = 147;
+            this.TSalida.TabIndex = 5;
             // 
             // BreakF
             // 
@@ -298,7 +298,7 @@
             this.BreakF.Location = new System.Drawing.Point(369, 187);
             this.BreakF.Name = "BreakF";
             this.BreakF.Size = new System.Drawing.Size(92, 20);
-            this.BreakF.TabIndex = 149;
+            this.BreakF.TabIndex = 7;
             // 
             // Tbreaki
             // 
@@ -306,7 +306,7 @@
             this.Tbreaki.Location = new System.Drawing.Point(133, 187);
             this.Tbreaki.Name = "Tbreaki";
             this.Tbreaki.Size = new System.Drawing.Size(92, 20);
-            this.Tbreaki.TabIndex = 148;
+            this.Tbreaki.TabIndex = 6;
             // 
             // dataGridView1
             // 
@@ -318,12 +318,12 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigo,
             this.Nombre});
-            this.dataGridView1.Location = new System.Drawing.Point(507, 11);
+            this.dataGridView1.Location = new System.Drawing.Point(576, 1);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(301, 236);
+            this.dataGridView1.Size = new System.Drawing.Size(253, 325);
             this.dataGridView1.TabIndex = 176;
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
