@@ -109,7 +109,12 @@ namespace Reclamos
                 llenarcampos();
         }
 
-       
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            txtcod.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString().Trim();
+            if (!string.IsNullOrEmpty(txtcod.Text))
+                llenarcampos();
+        }
 
         private void txtcod_KeyPress(object sender, KeyPressEventArgs e)
         {

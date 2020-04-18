@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnborrar = new System.Windows.Forms.Button();
             this.btnmodificar = new System.Windows.Forms.Button();
             this.btnsalir = new System.Windows.Forms.Button();
@@ -40,9 +43,6 @@
             this.txtcod = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtnota = new System.Windows.Forms.TextBox();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +64,28 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(516, 181);
             this.dataGridView1.TabIndex = 102;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
+            // 
+            // id
+            // 
+            this.id.HeaderText = "Codigo";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 60;
+            // 
+            // nombre
+            // 
+            this.nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            // 
+            // nota
+            // 
+            this.nota.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nota.HeaderText = "Nota";
+            this.nota.Name = "nota";
+            this.nota.ReadOnly = true;
             // 
             // btnborrar
             // 
@@ -179,27 +200,6 @@
             this.txtnota.Name = "txtnota";
             this.txtnota.Size = new System.Drawing.Size(394, 20);
             this.txtnota.TabIndex = 103;
-            // 
-            // id
-            // 
-            this.id.HeaderText = "Codigo";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Width = 60;
-            // 
-            // nombre
-            // 
-            this.nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            // 
-            // nota
-            // 
-            this.nota.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nota.HeaderText = "Nota";
-            this.nota.Name = "nota";
-            this.nota.ReadOnly = true;
             // 
             // FrmTiposUsuarios
             // 

@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Reclamos
@@ -103,6 +99,11 @@ namespace Reclamos
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
             txtcod.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString().Trim();
             if (!string.IsNullOrEmpty(txtcod.Text))
                 llenarcampos();
@@ -174,6 +175,11 @@ namespace Reclamos
 
             llenargrid();
             limpiar();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, EventArgs e)
+        {
+
         }
     }
 }
