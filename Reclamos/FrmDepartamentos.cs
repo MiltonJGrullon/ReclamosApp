@@ -287,7 +287,6 @@ namespace Reclamos
         private void txtcoddep_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode==Keys.F5)
-
             {
                 buscardepa();
             }
@@ -296,6 +295,31 @@ namespace Reclamos
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             buscardepa();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            buscaremp();
+        }
+
+        private void buscaremp()
+        { 
+            FrmConsEmpleados frm = new FrmConsEmpleados();
+            frm.ShowDialog();
+            if (!String.IsNullOrEmpty(Ctool.vretorno))
+            {
+                txtidencargado.Text = Ctool.vretorno.Trim();
+                txtnomencargado.Text = Ctool.nomentidades("V_EMPLEADOS", $"idcompania = {Ctool.cia} and id = {txtidencargado.Text.Trim()}");
+                Ctool.vretorno = String.Empty;
+            }
+        }
+
+        private void txtidencargado_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F5)
+            {
+                buscaremp();
+            }
         }
     }
 }

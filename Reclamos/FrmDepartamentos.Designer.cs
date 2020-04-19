@@ -215,6 +215,7 @@
             this.label3.Size = new System.Drawing.Size(116, 16);
             this.label3.TabIndex = 62;
             this.label3.Text = "[F5]-Encargado";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // txtidencargado
             // 
@@ -222,6 +223,7 @@
             this.txtidencargado.Name = "txtidencargado";
             this.txtidencargado.Size = new System.Drawing.Size(58, 20);
             this.txtidencargado.TabIndex = 2;
+            this.txtidencargado.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtidencargado_KeyDown);
             this.txtidencargado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtidencrgado);
             this.txtidencargado.Validating += new System.ComponentModel.CancelEventHandler(this.txtidencargado_Validating);
             // 

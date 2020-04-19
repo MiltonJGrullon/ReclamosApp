@@ -97,6 +97,7 @@
             this.txtidtipo.Name = "txtidtipo";
             this.txtidtipo.Size = new System.Drawing.Size(58, 20);
             this.txtidtipo.TabIndex = 1;
+            this.txtidtipo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtidtipo_KeyDown);
             this.txtidtipo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtidtipo_KeyPress);
             this.txtidtipo.Validating += new System.ComponentModel.CancelEventHandler(this.txtidtipo_Validating);
             // 
@@ -110,6 +111,7 @@
             this.label3.Size = new System.Drawing.Size(40, 16);
             this.label3.TabIndex = 103;
             this.label3.Text = "Tipo";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label1
             // 
@@ -200,6 +202,7 @@
             this.Rbact.Name = "Rbact";
             this.Rbact.Size = new System.Drawing.Size(59, 18);
             this.Rbact.TabIndex = 7;
+            this.Rbact.TabStop = true;
             this.Rbact.Text = "Activo";
             this.Rbact.UseVisualStyleBackColor = true;
             // 

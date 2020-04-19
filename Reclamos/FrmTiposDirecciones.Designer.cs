@@ -188,8 +188,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtnombre);
             this.Controls.Add(this.txtcod);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FrmTiposDirecciones";
-            this.Text = "FrmTiposDirecciones";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Tipos Direcciones";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

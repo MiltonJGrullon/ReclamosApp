@@ -51,7 +51,7 @@ namespace Reclamos
         {
             numrepresenta.Value = 0;
             Rbact.Checked = true;
-            Rbinac.Checked = false; 
+            Rbinac.Checked = false;
             if (a)
             {
                 txtidaccion.Text = String.Empty;
@@ -200,7 +200,7 @@ namespace Reclamos
             }
             if (String.IsNullOrEmpty(txtidaccion.Text.Trim()))
             {
-                MessageBox.Show("No. Accion es un campo obligatorio, Favor revisar.", "ReclamosApp",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("No. Accion es un campo obligatorio, Favor revisar.", "ReclamosApp", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtidaccion.Focus();
                 return;
             }
@@ -210,16 +210,16 @@ namespace Reclamos
                 txtidreclamo.Focus();
                 return;
             }
-            if (!Ctool.valexitbl("reclamos.Acciones", $"idcompania= {Ctool.cia} and id = {txtidaccion.Text.Trim()} and estado = 1")) 
+            if (!Ctool.valexitbl("reclamos.Acciones", $"idcompania= {Ctool.cia} and id = {txtidaccion.Text.Trim()} and estado = 1"))
             {
-                MessageBox.Show("No. Accion no existe, Favor revisar.", "ReclamosApp",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("No. Accion no existe, Favor revisar.", "ReclamosApp", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtidaccion.Focus();
                 return;
             }
             int vest = 0;
             if (Rbact.Checked)
                 vest = 1;
- 
+
             string veje = $"Exec Reclamos.Proc_Tipos_Reclamos_Acciones  @idcompania = {Ctool.cia},@idtipo={txtidreclamo.Text.Trim()},@idaccion = {txtidaccion.Text.Trim()}";
             veje += $",@representa = {numrepresenta.Value.ToString().Trim()},@estado = {vest}";
             Ctool.ExcSql(veje);
@@ -259,7 +259,7 @@ namespace Reclamos
                 return;
             }
             DialogResult dr = MessageBox.Show("Estas seguro que desea desabilitar registro?", "ReclamosApp", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dr==DialogResult.Yes)
+            if (dr == DialogResult.Yes)
             {
                 string vejec = String.Format("Update Reclamos.Tipos_Reclamos_Acciones set estado = 0 where idcompania = {0} and idaccion = {1} and idtipo = {2}", Ctool.cia, txtidaccion.Text.Trim(), txtidreclamo.Text.Trim());
                 Ctool.ExcSql(vejec);
@@ -270,10 +270,32 @@ namespace Reclamos
                 }
 
                 limpiar();
+            } 
+        }
+
+        private void txtidaccion_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F5)
+            {
+                buscaraccion();
             }
+        }
 
+        private void label4_Click(object sender, EventArgs e)
+        {
+            buscaraccion();
+        }
 
-
+        private void buscaraccion()
+        {
+            FrmConsAcciones frm = new FrmConsAcciones();
+            frm.ShowDialog();
+            if (!String.IsNullOrEmpty(Ctool.vretorno))
+            {
+                txtidaccion.Text = Ctool.vretorno.Trim();
+                llenaraccion();
+                Ctool.vretorno = String.Empty;
+            }
         }
     }
 }

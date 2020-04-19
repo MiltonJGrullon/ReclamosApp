@@ -312,6 +312,30 @@ namespace Reclamos
             }
 
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            buscartipousu();
+        }
+        private void buscartipousu()
+        {
+            FrmConsTipUsu frm = new FrmConsTipUsu();
+            frm.ShowDialog();
+            if (!String.IsNullOrEmpty(Ctool.vretorno))
+            {
+                txtidtipo.Text = Ctool.vretorno.Trim();
+                llenartipo();
+                Ctool.vretorno = String.Empty;
+            }
+        }
+
+        private void txtidtipo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F5)
+            {
+                buscartipousu();
+             }
+        }
     }
 }
 

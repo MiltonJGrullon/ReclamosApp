@@ -53,6 +53,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmConsAcciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConsAcciones.Designer.cs">
+      <DependentUpon>FrmConsAcciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmConsClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,36 @@
     </Compile>
     <Compile Include="FrmConsEmpleados.Designer.cs">
       <DependentUpon>FrmConsEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmConsNivel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConsNivel.Designer.cs">
+      <DependentUpon>FrmConsNivel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmConsTipCli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConsTipCli.Designer.cs">
+      <DependentUpon>FrmConsTipCli.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmConsTipEmp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConsTipEmp.Designer.cs">
+      <DependentUpon>FrmConsTipEmp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmConsTipReclamos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConsTipReclamos.Designer.cs">
+      <DependentUpon>FrmConsTipReclamos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmConsTipUsu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConsTipUsu.Designer.cs">
+      <DependentUpon>FrmConsTipUsu.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmTiposClientes.cs">
       <SubType>Form</SubType>
@@ -202,6 +238,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmConsAcciones.resx">
+      <DependentUpon>FrmConsAcciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmConsClientes.resx">
       <DependentUpon>FrmConsClientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -213,6 +252,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmConsEmpleados.resx">
       <DependentUpon>FrmConsEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConsNivel.resx">
+      <DependentUpon>FrmConsNivel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConsTipCli.resx">
+      <DependentUpon>FrmConsTipCli.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConsTipEmp.resx">
+      <DependentUpon>FrmConsTipEmp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConsTipReclamos.resx">
+      <DependentUpon>FrmConsTipReclamos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConsTipUsu.resx">
+      <DependentUpon>FrmConsTipUsu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTiposClientes.resx">
       <DependentUpon>FrmTiposClientes.cs</DependentUpon>

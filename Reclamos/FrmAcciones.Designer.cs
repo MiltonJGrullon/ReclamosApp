@@ -104,6 +104,7 @@
             this.txtcod.Name = "txtcod";
             this.txtcod.Size = new System.Drawing.Size(58, 20);
             this.txtcod.TabIndex = 0;
+            this.txtcod.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtcod_KeyDown);
             this.txtcod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcod_KeyPress);
             this.txtcod.Validating += new System.ComponentModel.CancelEventHandler(this.txtcod_Validating);
             // 
@@ -118,6 +119,7 @@
             this.linkLabel1.TabIndex = 77;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Codigo";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // btnborrar
             // 

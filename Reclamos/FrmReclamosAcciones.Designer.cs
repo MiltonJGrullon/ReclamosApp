@@ -128,19 +128,21 @@
             this.txtidaccion.Name = "txtidaccion";
             this.txtidaccion.Size = new System.Drawing.Size(58, 20);
             this.txtidaccion.TabIndex = 1;
+            this.txtidaccion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtidaccion_KeyDown);
             this.txtidaccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtidaccion_KeyPress);
             this.txtidaccion.Validating += new System.ComponentModel.CancelEventHandler(this.txtidaccion_Validating);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Arial Narrow", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Blue;
             this.label4.Location = new System.Drawing.Point(30, 45);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(79, 20);
             this.label4.TabIndex = 102;
             this.label4.Text = "[F5]-Accion";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // txtnomreclamo
             // 
@@ -163,7 +165,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Arial Narrow", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Blue;
             this.label3.Location = new System.Drawing.Point(30, 11);
             this.label3.Name = "label3";

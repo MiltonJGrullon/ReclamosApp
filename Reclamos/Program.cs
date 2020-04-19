@@ -15,7 +15,7 @@ namespace Reclamos
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmDepartamentos());
+            Application.Run(new FrmTiposReclamos());
         }
     }
 }

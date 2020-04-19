@@ -181,5 +181,30 @@ namespace Reclamos
         {
 
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            buscartipcli();
+        }
+
+        private void buscartipcli()
+        {
+            FrmConsTipCli frm = new FrmConsTipCli();
+            frm.ShowDialog();
+            if (!String.IsNullOrEmpty(Ctool.vretorno))
+            {
+                txtcod.Text = Ctool.vretorno.Trim();
+                llenarcampos();
+                Ctool.vretorno = String.Empty;
+            }
+        }
+
+        private void txtcod_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F5)
+            {
+                buscartipcli();
+            }
+        }
     }
 }

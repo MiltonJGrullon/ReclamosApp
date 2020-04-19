@@ -185,5 +185,30 @@ namespace Reclamos
             if (!string.IsNullOrEmpty(txtcod.Text))
                 llenarcampos();
         }
+
+        private void txtcod_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode ==Keys.F5)
+            {
+                buscartipousu();
+            }
+        }
+
+        private void buscartipousu()
+        {
+            FrmConsTipUsu frm = new FrmConsTipUsu();
+            frm.ShowDialog();
+            if (!String.IsNullOrEmpty(Ctool.vretorno))
+            {
+                txtcod.Text = Ctool.vretorno.Trim();
+                llenarcampos();
+                Ctool.vretorno = String.Empty;
+            }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            buscartipousu();
+        }
     }
 }

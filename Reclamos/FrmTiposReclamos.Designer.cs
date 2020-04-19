@@ -38,7 +38,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtdescripcion = new System.Windows.Forms.TextBox();
-            this.txtcoddep = new System.Windows.Forms.TextBox();
+            this.txtcod = new System.Windows.Forms.TextBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.Rbinac = new System.Windows.Forms.RadioButton();
             this.Rbact = new System.Windows.Forms.RadioButton();
@@ -47,35 +47,42 @@
             this.txtiddep = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtnivel = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnborrar
             // 
             this.btnborrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnborrar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnborrar.Location = new System.Drawing.Point(230, 182);
+            this.btnborrar.Location = new System.Drawing.Point(232, 388);
             this.btnborrar.Name = "btnborrar";
             this.btnborrar.Size = new System.Drawing.Size(92, 40);
             this.btnborrar.TabIndex = 57;
             this.btnborrar.Text = "Borrar";
             this.btnborrar.UseVisualStyleBackColor = true;
+            this.btnborrar.Click += new System.EventHandler(this.btnborrar_Click);
             // 
             // btnmodificar
             // 
             this.btnmodificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnmodificar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnmodificar.Location = new System.Drawing.Point(124, 182);
+            this.btnmodificar.Location = new System.Drawing.Point(126, 388);
             this.btnmodificar.Name = "btnmodificar";
             this.btnmodificar.Size = new System.Drawing.Size(92, 40);
             this.btnmodificar.TabIndex = 56;
             this.btnmodificar.Text = "Modificar";
             this.btnmodificar.UseVisualStyleBackColor = true;
+            this.btnmodificar.Click += new System.EventHandler(this.btnmodificar_Click);
             // 
             // btnsalir
             // 
             this.btnsalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsalir.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnsalir.Location = new System.Drawing.Point(442, 182);
+            this.btnsalir.Location = new System.Drawing.Point(444, 388);
             this.btnsalir.Name = "btnsalir";
             this.btnsalir.Size = new System.Drawing.Size(92, 40);
             this.btnsalir.TabIndex = 55;
@@ -87,23 +94,25 @@
             // 
             this.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncancelar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncancelar.Location = new System.Drawing.Point(336, 182);
+            this.btncancelar.Location = new System.Drawing.Point(338, 388);
             this.btncancelar.Name = "btncancelar";
             this.btncancelar.Size = new System.Drawing.Size(92, 40);
             this.btncancelar.TabIndex = 54;
             this.btncancelar.Text = "Cancelar";
             this.btncancelar.UseVisualStyleBackColor = true;
+            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
             // 
             // btnsalvar
             // 
             this.btnsalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsalvar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnsalvar.Location = new System.Drawing.Point(18, 182);
+            this.btnsalvar.Location = new System.Drawing.Point(20, 388);
             this.btnsalvar.Name = "btnsalvar";
             this.btnsalvar.Size = new System.Drawing.Size(92, 40);
-            this.btnsalvar.TabIndex = 4;
+            this.btnsalvar.TabIndex = 5;
             this.btnsalvar.Text = "Salvar";
             this.btnsalvar.UseVisualStyleBackColor = true;
+            this.btnsalvar.Click += new System.EventHandler(this.btnsalvar_Click);
             // 
             // txtdesnivel
             // 
@@ -120,6 +129,9 @@
             this.txtidnivel.Name = "txtidnivel";
             this.txtidnivel.Size = new System.Drawing.Size(58, 20);
             this.txtidnivel.TabIndex = 2;
+            this.txtidnivel.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtidnivel_KeyDown);
+            this.txtidnivel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtidnivel_KeyPress);
+            this.txtidnivel.Validating += new System.ComponentModel.CancelEventHandler(this.txtidnivel_Validating);
             // 
             // label3
             // 
@@ -131,6 +143,7 @@
             this.label3.Size = new System.Drawing.Size(44, 16);
             this.label3.TabIndex = 70;
             this.label3.Text = "Nivel";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label1
             // 
@@ -149,12 +162,15 @@
             this.txtdescripcion.Size = new System.Drawing.Size(348, 20);
             this.txtdescripcion.TabIndex = 3;
             // 
-            // txtcoddep
+            // txtcod
             // 
-            this.txtcoddep.Location = new System.Drawing.Point(124, 12);
-            this.txtcoddep.Name = "txtcoddep";
-            this.txtcoddep.Size = new System.Drawing.Size(58, 20);
-            this.txtcoddep.TabIndex = 0;
+            this.txtcod.Location = new System.Drawing.Point(124, 12);
+            this.txtcod.Name = "txtcod";
+            this.txtcod.Size = new System.Drawing.Size(58, 20);
+            this.txtcod.TabIndex = 0;
+            this.txtcod.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtcod_KeyDown);
+            this.txtcod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcod_KeyPress);
+            this.txtcod.Validating += new System.ComponentModel.CancelEventHandler(this.txtcod_Validating);
             // 
             // linkLabel1
             // 
@@ -166,6 +182,7 @@
             this.linkLabel1.TabIndex = 68;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Codigo";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // Rbinac
             // 
@@ -216,6 +233,9 @@
             this.txtiddep.Name = "txtiddep";
             this.txtiddep.Size = new System.Drawing.Size(58, 20);
             this.txtiddep.TabIndex = 1;
+            this.txtiddep.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtiddep_KeyDown);
+            this.txtiddep.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtiddep_KeyPress);
+            this.txtiddep.Validating += new System.ComponentModel.CancelEventHandler(this.txtiddep_Validating);
             // 
             // label4
             // 
@@ -227,21 +247,64 @@
             this.label4.Size = new System.Drawing.Size(106, 16);
             this.label4.TabIndex = 76;
             this.label4.Text = "Departamento";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // txtnivel
             // 
             this.txtnivel.Enabled = false;
-            this.txtnivel.Location = new System.Drawing.Point(478, 72);
+            this.txtnivel.Location = new System.Drawing.Point(478, 73);
             this.txtnivel.Name = "txtnivel";
             this.txtnivel.Size = new System.Drawing.Size(31, 20);
             this.txtnivel.TabIndex = 78;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Codigo,
+            this.Descripcion,
+            this.Estado});
+            this.dataGridView1.Location = new System.Drawing.Point(23, 176);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(506, 192);
+            this.dataGridView1.TabIndex = 4;
+            this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            this.Codigo.Width = 60;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "S";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            this.Estado.Width = 30;
             // 
             // FrmTiposReclamos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(558, 230);
+            this.ClientSize = new System.Drawing.Size(558, 440);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txtnivel);
             this.Controls.Add(this.txtdesdep);
             this.Controls.Add(this.txtiddep);
@@ -254,7 +317,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtdescripcion);
-            this.Controls.Add(this.txtcoddep);
+            this.Controls.Add(this.txtcod);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.btnborrar);
             this.Controls.Add(this.btnmodificar);
@@ -265,6 +328,7 @@
             this.Name = "FrmTiposReclamos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de tipos de reclamos";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -282,7 +346,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtdescripcion;
-        private System.Windows.Forms.TextBox txtcoddep;
+        private System.Windows.Forms.TextBox txtcod;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.RadioButton Rbinac;
         private System.Windows.Forms.RadioButton Rbact;
@@ -291,5 +355,9 @@
         private System.Windows.Forms.TextBox txtiddep;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtnivel;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
     }
 }
