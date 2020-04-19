@@ -81,6 +81,7 @@
             this.txtcoddep.Size = new System.Drawing.Size(58, 20);
             this.txtcoddep.TabIndex = 0;
             this.txtcoddep.TextChanged += new System.EventHandler(this.txtcoddep_TextChanged);
+            this.txtcoddep.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtcoddep_KeyDown);
             this.txtcoddep.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcoddep_KeyPress);
             this.txtcoddep.Validating += new System.ComponentModel.CancelEventHandler(this.txtcoddep_Validating);
             // 
@@ -88,12 +89,13 @@
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(29, 18);
+            this.linkLabel1.Location = new System.Drawing.Point(16, 18);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(58, 16);
+            this.linkLabel1.Size = new System.Drawing.Size(90, 16);
             this.linkLabel1.TabIndex = 55;
             this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Codigo";
+            this.linkLabel1.Text = "[F5]-Codigo";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // txtapellido
             // 

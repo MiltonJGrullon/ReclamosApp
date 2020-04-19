@@ -159,8 +159,6 @@ namespace Reclamos
                 TSalida.Text = dt.Rows[0]["horasalida"].ToString();
                 Tbreaki.Text = dt.Rows[0]["horabreaki"].ToString();
                 BreakF.Text = dt.Rows[0]["horabreaks"].ToString();
-
-                
                 Rbact.Checked = Convert.ToBoolean(dt.Rows[0]["estado"]);
                 Rbinac.Checked = !Convert.ToBoolean(dt.Rows[0]["estado"]);
 
@@ -315,6 +313,21 @@ namespace Reclamos
         private void FrmOperadores_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtcod_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F5)
+            {
+                FrmConsEmpleados frm = new FrmConsEmpleados();
+                frm.ShowDialog();
+                if (!string.IsNullOrEmpty(Ctool.vretorno))
+                {
+                    txtcod.Text = Ctool.vretorno;
+                    llenarcampos();
+                    Ctool.vretorno = string.Empty;
+                }
+            }
         }
     }
 }

@@ -186,7 +186,14 @@ namespace Reclamos
 
         private void buscarclientes()
         {
-            throw new NotImplementedException();
+            FrmConsClientes frm = new FrmConsClientes();
+            frm.ShowDialog();
+            if (!String.IsNullOrEmpty(Ctool.vretorno))
+            {
+                txtcodcli.Text = Ctool.vretorno.Trim();
+                llenarclientes();
+                Ctool.vretorno = String.Empty;
+            }
         }
 
         private void lblcliente_Click(object sender, EventArgs e)

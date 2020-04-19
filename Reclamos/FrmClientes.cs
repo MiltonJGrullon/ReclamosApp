@@ -490,5 +490,30 @@ namespace Reclamos
                 limpiar();
             }
         }
+
+        private void txtcoddep_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F5)
+            {
+                buscarcli();
+            }
+        }
+
+        private void buscarcli()
+        {
+            FrmConsClientes frm = new FrmConsClientes();
+            frm.ShowDialog();
+            if (!String.IsNullOrEmpty(Ctool.vretorno))
+            {
+                txtcoddep.Text = Ctool.vretorno.Trim();
+                llenarcampos();
+                Ctool.vretorno = String.Empty;
+            }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            buscarcli();
+        }
     }
 }

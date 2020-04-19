@@ -53,11 +53,29 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmConsClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConsClientes.Designer.cs">
+      <DependentUpon>FrmConsClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAsignarAccionesReclamos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmAsignarAccionesReclamos.Designer.cs">
       <DependentUpon>FrmAsignarAccionesReclamos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmConsDepa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConsDepa.Designer.cs">
+      <DependentUpon>FrmConsDepa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmConsEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConsEmpleados.Designer.cs">
+      <DependentUpon>FrmConsEmpleados.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmTiposClientes.cs">
       <SubType>Form</SubType>
@@ -183,6 +201,18 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConsClientes.resx">
+      <DependentUpon>FrmConsClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAsignarAccionesReclamos.resx">
+      <DependentUpon>FrmAsignarAccionesReclamos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConsDepa.resx">
+      <DependentUpon>FrmConsDepa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConsEmpleados.resx">
+      <DependentUpon>FrmConsEmpleados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTiposClientes.resx">
       <DependentUpon>FrmTiposClientes.cs</DependentUpon>
