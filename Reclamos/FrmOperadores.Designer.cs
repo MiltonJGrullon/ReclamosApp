@@ -139,6 +139,7 @@
             this.linkLabel1.TabIndex = 131;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "[F5]-Codigo";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // txtnombre
             // 
