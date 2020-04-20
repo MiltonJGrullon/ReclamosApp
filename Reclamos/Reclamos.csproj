@@ -157,6 +157,12 @@
     <Compile Include="FrmConsTipUsu.Designer.cs">
       <DependentUpon>FrmConsTipUsu.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmRepClientesReclamos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRepClientesReclamos.Designer.cs">
+      <DependentUpon>FrmRepClientesReclamos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmReporte.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +174,12 @@
     </Compile>
     <Compile Include="FrmRepReclamosAgrup.Designer.cs">
       <DependentUpon>FrmRepReclamosAgrup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRepReclamosD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRepReclamosD.Designer.cs">
+      <DependentUpon>FrmRepReclamosD.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmTiposClientes.cs">
       <SubType>Form</SubType>
@@ -291,6 +303,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reclamosdetalle.cs" />
+    <Compile Include="Reclamosxclientes.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="ReclamosAgrup.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -329,11 +343,17 @@
     <EmbeddedResource Include="FrmConsTipUsu.resx">
       <DependentUpon>FrmConsTipUsu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmRepClientesReclamos.resx">
+      <DependentUpon>FrmRepClientesReclamos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmReporte.resx">
       <DependentUpon>FrmReporte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRepReclamosAgrup.resx">
       <DependentUpon>FrmRepReclamosAgrup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRepReclamosD.resx">
+      <DependentUpon>FrmRepReclamosD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTiposClientes.resx">
       <DependentUpon>FrmTiposClientes.cs</DependentUpon>
@@ -405,10 +425,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="rep\ReportReclamosCli.rdlc" />
     <EmbeddedResource Include="rep\ReportModelo.rdlc" />
+    <EmbeddedResource Include="rep\ReportReclamosD.rdlc" />
     <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\ReclamosAgrup.datasource" />
+    <None Include="Properties\DataSources\Reclamosdetalle.datasource" />
+    <None Include="Properties\DataSources\Reclamosxclientes.datasource" />
     <None Include="Properties\DataSources\Usuario.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

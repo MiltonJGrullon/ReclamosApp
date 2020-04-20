@@ -50,15 +50,15 @@
             this.reclamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.seguimientosAReclamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reclamosMasReportadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reclamosDetalladoPorFechaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientesConMasReportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.procesosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.establecerAccionesDeLosReclamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.establecerDependientesDeAccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirDelSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.reclamosMasReportadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reclamosDetalladoPorFechaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.clientesConMasReportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -244,6 +244,27 @@
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.reportesToolStripMenuItem.Text = "Reportes";
             // 
+            // reclamosMasReportadosToolStripMenuItem
+            // 
+            this.reclamosMasReportadosToolStripMenuItem.Name = "reclamosMasReportadosToolStripMenuItem";
+            this.reclamosMasReportadosToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            this.reclamosMasReportadosToolStripMenuItem.Text = "Reclamos mas reportados";
+            this.reclamosMasReportadosToolStripMenuItem.Click += new System.EventHandler(this.reclamosMasReportadosToolStripMenuItem_Click);
+            // 
+            // reclamosDetalladoPorFechaToolStripMenuItem
+            // 
+            this.reclamosDetalladoPorFechaToolStripMenuItem.Name = "reclamosDetalladoPorFechaToolStripMenuItem";
+            this.reclamosDetalladoPorFechaToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            this.reclamosDetalladoPorFechaToolStripMenuItem.Text = "Reclamos detallado por fecha ";
+            this.reclamosDetalladoPorFechaToolStripMenuItem.Click += new System.EventHandler(this.reclamosDetalladoPorFechaToolStripMenuItem_Click);
+            // 
+            // clientesConMasReportesToolStripMenuItem
+            // 
+            this.clientesConMasReportesToolStripMenuItem.Name = "clientesConMasReportesToolStripMenuItem";
+            this.clientesConMasReportesToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            this.clientesConMasReportesToolStripMenuItem.Text = "Clientes con mas reportes";
+            this.clientesConMasReportesToolStripMenuItem.Click += new System.EventHandler(this.clientesConMasReportesToolStripMenuItem_Click);
+            // 
             // procesosToolStripMenuItem
             // 
             this.procesosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -294,25 +315,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            // 
-            // reclamosMasReportadosToolStripMenuItem
-            // 
-            this.reclamosMasReportadosToolStripMenuItem.Name = "reclamosMasReportadosToolStripMenuItem";
-            this.reclamosMasReportadosToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
-            this.reclamosMasReportadosToolStripMenuItem.Text = "Reclamos mas reportados";
-            this.reclamosMasReportadosToolStripMenuItem.Click += new System.EventHandler(this.reclamosMasReportadosToolStripMenuItem_Click);
-            // 
-            // reclamosDetalladoPorFechaToolStripMenuItem
-            // 
-            this.reclamosDetalladoPorFechaToolStripMenuItem.Name = "reclamosDetalladoPorFechaToolStripMenuItem";
-            this.reclamosDetalladoPorFechaToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
-            this.reclamosDetalladoPorFechaToolStripMenuItem.Text = "Reclamos detallado por fecha ";
-            // 
-            // clientesConMasReportesToolStripMenuItem
-            // 
-            this.clientesConMasReportesToolStripMenuItem.Name = "clientesConMasReportesToolStripMenuItem";
-            this.clientesConMasReportesToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
-            this.clientesConMasReportesToolStripMenuItem.Text = "Clientes con mas reportes";
             // 
             // FrmMenuPrincipal
             // 

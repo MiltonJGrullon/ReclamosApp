@@ -52,14 +52,14 @@
             this.dateTimePicker1.Location = new System.Drawing.Point(121, 25);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(229, 20);
-            this.dateTimePicker1.TabIndex = 1;
+            this.dateTimePicker1.TabIndex = 0;
             // 
             // dateTimePicker2
             // 
             this.dateTimePicker2.Location = new System.Drawing.Point(121, 60);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(229, 20);
-            this.dateTimePicker2.TabIndex = 3;
+            this.dateTimePicker2.TabIndex = 1;
             // 
             // label2
             // 
@@ -77,7 +77,7 @@
             this.BtnImprimir.Location = new System.Drawing.Point(29, 109);
             this.BtnImprimir.Name = "BtnImprimir";
             this.BtnImprimir.Size = new System.Drawing.Size(99, 35);
-            this.BtnImprimir.TabIndex = 4;
+            this.BtnImprimir.TabIndex = 2;
             this.BtnImprimir.Text = "Imprimir";
             this.BtnImprimir.UseVisualStyleBackColor = true;
             this.BtnImprimir.Click += new System.EventHandler(this.BtnImprimir_Click);

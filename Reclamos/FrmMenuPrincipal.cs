@@ -140,5 +140,17 @@ namespace Reclamos
             FrmRepReclamosAgrup frm = new FrmRepReclamosAgrup();
             frm.ShowDialog();
         }
+
+        private void reclamosDetalladoPorFechaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmRepReclamosD frm = new FrmRepReclamosD();
+            frm.ShowDialog();
+        }
+
+        private void clientesConMasReportesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmRepClientesReclamos frm = new FrmRepClientesReclamos();
+            frm.ShowDialog();
+        }
     }
 }
