@@ -128,5 +128,11 @@ namespace Reclamos
             FrmTiposUsuarios frm = new FrmTiposUsuarios();
             frm.ShowDialog();
         }
+
+        private void seguimientosAReclamosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAsignarAccionesReclamos frm = new FrmAsignarAccionesReclamos();
+            frm.ShowDialog();
+        }
     }
 }

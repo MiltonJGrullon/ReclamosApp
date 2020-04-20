@@ -123,10 +123,10 @@
             // Btnselec
             // 
             this.Btnselec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btnselec.Location = new System.Drawing.Point(261, 369);
+            this.Btnselec.Location = new System.Drawing.Point(234, 367);
             this.Btnselec.Name = "Btnselec";
             this.Btnselec.Size = new System.Drawing.Size(104, 32);
-            this.Btnselec.TabIndex = 177;
+            this.Btnselec.TabIndex = 3;
             this.Btnselec.Text = "Seleccionar";
             this.Btnselec.UseVisualStyleBackColor = true;
             this.Btnselec.Click += new System.EventHandler(this.Btnselec_Click);
@@ -135,7 +135,7 @@
             // 
             this.Btnsalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.Btnsalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btnsalir.Location = new System.Drawing.Point(442, 369);
+            this.Btnsalir.Location = new System.Drawing.Point(415, 367);
             this.Btnsalir.Name = "Btnsalir";
             this.Btnsalir.Size = new System.Drawing.Size(104, 32);
             this.Btnsalir.TabIndex = 177;

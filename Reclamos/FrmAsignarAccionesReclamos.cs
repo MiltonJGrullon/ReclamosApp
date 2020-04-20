@@ -174,7 +174,8 @@ namespace Reclamos
  
                 llenargridacciones();
                 llenarclientes();
-                llenargridrecomendado();
+                llenargridrecomendado($" and idtipo = {txtidtiporec.Text.Trim()}");
+                
 
                 limpiarac();
                 txtidaccion.Focus();
@@ -578,7 +579,7 @@ namespace Reclamos
             }
             if (cmbestado.SelectedIndex == 1)
             {
-                Ctool.ExcSql($"Update reclamos.Transacciones set estado = 0 where idcompania = {Ctool.cia} and id = {txtcod.Text.Trim()}");
+                Ctool.ExcSql($"Update reclamos.Transacciones set estado = 0,HoraDespachado = getdate() where idcompania = {Ctool.cia} and id = {txtcod.Text.Trim()}");
                 if (Ctool.OcError)
                 {
                     MessageBox.Show("Error Actualizado  tabla reclamos.Transacciones.", "ReclamosApp", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -615,6 +616,31 @@ namespace Reclamos
 
             limpiar();
 
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            buscarreclamos();
+        }
+
+        private void buscarreclamos()
+        {
+            FrmConsReclamos frm = new FrmConsReclamos();
+            frm.ShowDialog();
+            if (!String.IsNullOrEmpty(Ctool.vretorno))
+            {
+                txtcod.Text = Ctool.vretorno.Trim();
+                llenarcampos();
+                Ctool.vretorno = String.Empty;
+            }
+        }
+
+        private void txtcod_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F5)
+            {
+                buscarreclamos();
+            }
         }
     }
 }

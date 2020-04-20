@@ -89,6 +89,12 @@
     <Compile Include="FrmConsNivel.Designer.cs">
       <DependentUpon>FrmConsNivel.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmConsReclamos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConsReclamos.Designer.cs">
+      <DependentUpon>FrmConsReclamos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmConsTipCli.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -255,6 +261,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmConsNivel.resx">
       <DependentUpon>FrmConsNivel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConsReclamos.resx">
+      <DependentUpon>FrmConsReclamos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmConsTipCli.resx">
       <DependentUpon>FrmConsTipCli.cs</DependentUpon>

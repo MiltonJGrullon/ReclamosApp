@@ -45,16 +45,17 @@
             this.tiposDocumentacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoTelefonosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tiposUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.paisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transaccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reclamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.seguimientosAReclamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.procesosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.establecerDependientesDeAccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.establecerAccionesDeLosReclamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.establecerDependientesDeAccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirDelSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.paisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -201,10 +202,17 @@
             this.tiposUsuariosToolStripMenuItem.Text = "Tipos Usuarios";
             this.tiposUsuariosToolStripMenuItem.Click += new System.EventHandler(this.tiposUsuariosToolStripMenuItem_Click);
             // 
+            // paisToolStripMenuItem
+            // 
+            this.paisToolStripMenuItem.Name = "paisToolStripMenuItem";
+            this.paisToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
+            this.paisToolStripMenuItem.Text = "Pais";
+            // 
             // transaccionesToolStripMenuItem
             // 
             this.transaccionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.reclamosToolStripMenuItem});
+            this.reclamosToolStripMenuItem,
+            this.seguimientosAReclamosToolStripMenuItem});
             this.transaccionesToolStripMenuItem.Name = "transaccionesToolStripMenuItem";
             this.transaccionesToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
             this.transaccionesToolStripMenuItem.Text = "Transacciones";
@@ -212,9 +220,16 @@
             // reclamosToolStripMenuItem
             // 
             this.reclamosToolStripMenuItem.Name = "reclamosToolStripMenuItem";
-            this.reclamosToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.reclamosToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
             this.reclamosToolStripMenuItem.Text = "Reclamos";
             this.reclamosToolStripMenuItem.Click += new System.EventHandler(this.reclamosToolStripMenuItem_Click);
+            // 
+            // seguimientosAReclamosToolStripMenuItem
+            // 
+            this.seguimientosAReclamosToolStripMenuItem.Name = "seguimientosAReclamosToolStripMenuItem";
+            this.seguimientosAReclamosToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.seguimientosAReclamosToolStripMenuItem.Text = "Seguimientos a Reclamos";
+            this.seguimientosAReclamosToolStripMenuItem.Click += new System.EventHandler(this.seguimientosAReclamosToolStripMenuItem_Click);
             // 
             // reportesToolStripMenuItem
             // 
@@ -225,18 +240,11 @@
             // procesosToolStripMenuItem
             // 
             this.procesosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.establecerDependientesDeAccionesToolStripMenuItem,
-            this.establecerAccionesDeLosReclamosToolStripMenuItem});
+            this.establecerAccionesDeLosReclamosToolStripMenuItem,
+            this.establecerDependientesDeAccionesToolStripMenuItem});
             this.procesosToolStripMenuItem.Name = "procesosToolStripMenuItem";
             this.procesosToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.procesosToolStripMenuItem.Text = "Procesos";
-            // 
-            // establecerDependientesDeAccionesToolStripMenuItem
-            // 
-            this.establecerDependientesDeAccionesToolStripMenuItem.Name = "establecerDependientesDeAccionesToolStripMenuItem";
-            this.establecerDependientesDeAccionesToolStripMenuItem.Size = new System.Drawing.Size(279, 22);
-            this.establecerDependientesDeAccionesToolStripMenuItem.Text = "Establecer dependientes a las acciones ";
-            this.establecerDependientesDeAccionesToolStripMenuItem.Click += new System.EventHandler(this.establecerDependientesDeAccionesToolStripMenuItem_Click);
             // 
             // establecerAccionesDeLosReclamosToolStripMenuItem
             // 
@@ -244,6 +252,13 @@
             this.establecerAccionesDeLosReclamosToolStripMenuItem.Size = new System.Drawing.Size(279, 22);
             this.establecerAccionesDeLosReclamosToolStripMenuItem.Text = "Establecer acciones a los reclamos";
             this.establecerAccionesDeLosReclamosToolStripMenuItem.Click += new System.EventHandler(this.establecerAccionesDeLosReclamosToolStripMenuItem_Click);
+            // 
+            // establecerDependientesDeAccionesToolStripMenuItem
+            // 
+            this.establecerDependientesDeAccionesToolStripMenuItem.Name = "establecerDependientesDeAccionesToolStripMenuItem";
+            this.establecerDependientesDeAccionesToolStripMenuItem.Size = new System.Drawing.Size(279, 22);
+            this.establecerDependientesDeAccionesToolStripMenuItem.Text = "Establecer dependientes a las acciones ";
+            this.establecerDependientesDeAccionesToolStripMenuItem.Click += new System.EventHandler(this.establecerDependientesDeAccionesToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
@@ -272,13 +287,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            // 
-            // paisToolStripMenuItem
-            // 
-            this.paisToolStripMenuItem.Name = "paisToolStripMenuItem";
-            this.paisToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
-            this.paisToolStripMenuItem.Text = "Pais";
-      //      this.paisToolStripMenuItem.Click += new System.EventHandler(this.paisToolStripMenuItem_Click);
             // 
             // FrmMenuPrincipal
             // 
@@ -330,5 +338,6 @@
         private System.Windows.Forms.ToolStripMenuItem tipoTelefonosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tiposUsuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem paisToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem seguimientosAReclamosToolStripMenuItem;
     }
 }

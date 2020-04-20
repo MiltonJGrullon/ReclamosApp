@@ -68,6 +68,12 @@
             this.Lblaccion = new System.Windows.Forms.LinkLabel();
             this.lblempleado = new System.Windows.Forms.LinkLabel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.idaccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Accionnom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CodEmp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomEmp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fechaini = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fechafin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Btnprocesar = new System.Windows.Forms.Button();
             this.btncancelar = new System.Windows.Forms.Button();
             this.Btnsalir = new System.Windows.Forms.Button();
@@ -75,12 +81,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.cmbestado = new System.Windows.Forms.ComboBox();
-            this.idaccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Accionnom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CodEmp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NomEmp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fechaini = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fechafin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -191,6 +191,7 @@
             this.txtcod.Name = "txtcod";
             this.txtcod.Size = new System.Drawing.Size(112, 23);
             this.txtcod.TabIndex = 0;
+            this.txtcod.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtcod_KeyDown);
             this.txtcod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcod_KeyPress);
             this.txtcod.Validating += new System.ComponentModel.CancelEventHandler(this.txtcod_Validating);
             // 
@@ -205,6 +206,7 @@
             this.label1.Size = new System.Drawing.Size(81, 20);
             this.label1.TabIndex = 15;
             this.label1.Text = "[F5]-Codigo";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // dataGridView1
             // 
@@ -506,6 +508,47 @@
             this.dataGridView2.TabIndex = 9;
             this.dataGridView2.DoubleClick += new System.EventHandler(this.dataGridView2_DoubleClick);
             // 
+            // idaccion
+            // 
+            this.idaccion.HeaderText = "No. Accion";
+            this.idaccion.Name = "idaccion";
+            this.idaccion.ReadOnly = true;
+            this.idaccion.Width = 95;
+            // 
+            // Accionnom
+            // 
+            this.Accionnom.HeaderText = "Accion";
+            this.Accionnom.Name = "Accionnom";
+            this.Accionnom.ReadOnly = true;
+            this.Accionnom.Width = 175;
+            // 
+            // CodEmp
+            // 
+            this.CodEmp.HeaderText = "No. Empleado";
+            this.CodEmp.Name = "CodEmp";
+            this.CodEmp.ReadOnly = true;
+            // 
+            // NomEmp
+            // 
+            this.NomEmp.HeaderText = "Empleado";
+            this.NomEmp.Name = "NomEmp";
+            this.NomEmp.ReadOnly = true;
+            this.NomEmp.Width = 175;
+            // 
+            // Fechaini
+            // 
+            this.Fechaini.HeaderText = "Fecha Inicio";
+            this.Fechaini.Name = "Fechaini";
+            this.Fechaini.ReadOnly = true;
+            this.Fechaini.Width = 130;
+            // 
+            // Fechafin
+            // 
+            this.Fechafin.HeaderText = "Fecha Fin";
+            this.Fechafin.Name = "Fechafin";
+            this.Fechafin.ReadOnly = true;
+            this.Fechafin.Width = 130;
+            // 
             // Btnprocesar
             // 
             this.Btnprocesar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -586,47 +629,6 @@
             this.cmbestado.Name = "cmbestado";
             this.cmbestado.Size = new System.Drawing.Size(148, 21);
             this.cmbestado.TabIndex = 61;
-            // 
-            // idaccion
-            // 
-            this.idaccion.HeaderText = "No. Accion";
-            this.idaccion.Name = "idaccion";
-            this.idaccion.ReadOnly = true;
-            this.idaccion.Width = 95;
-            // 
-            // Accionnom
-            // 
-            this.Accionnom.HeaderText = "Accion";
-            this.Accionnom.Name = "Accionnom";
-            this.Accionnom.ReadOnly = true;
-            this.Accionnom.Width = 175;
-            // 
-            // CodEmp
-            // 
-            this.CodEmp.HeaderText = "No. Empleado";
-            this.CodEmp.Name = "CodEmp";
-            this.CodEmp.ReadOnly = true;
-            // 
-            // NomEmp
-            // 
-            this.NomEmp.HeaderText = "Empleado";
-            this.NomEmp.Name = "NomEmp";
-            this.NomEmp.ReadOnly = true;
-            this.NomEmp.Width = 175;
-            // 
-            // Fechaini
-            // 
-            this.Fechaini.HeaderText = "Fecha Inicio";
-            this.Fechaini.Name = "Fechaini";
-            this.Fechaini.ReadOnly = true;
-            this.Fechaini.Width = 130;
-            // 
-            // Fechafin
-            // 
-            this.Fechafin.HeaderText = "Fecha Fin";
-            this.Fechafin.Name = "Fechafin";
-            this.Fechafin.ReadOnly = true;
-            this.Fechafin.Width = 130;
             // 
             // FrmAsignarAccionesReclamos
             // 

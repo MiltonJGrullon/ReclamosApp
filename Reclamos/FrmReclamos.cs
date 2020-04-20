@@ -329,5 +329,7 @@ namespace Reclamos
             llenaroperadores();
             llenargrid();
         }
+
+
     }
 }
