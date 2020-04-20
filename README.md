@@ -1,4 +1,8 @@
 # ReclamosApp
+
+Reclamos App es una aplicación de escritorio para la gestión de reclamos hecho en Visual Studio 2019, lenguaje C#, con SQL Server 2019 de gestor de base de datos. Se realizó como complemento de la materia de Sistema y Tecnología de Información.
+
+
 El proyecto de gestión de reclamos cuenta con un archivo de configuracion (config) en la ruta "\Reclamos_Sol\Reclamos\bin\Debug" de dicho proyecto. Este archivo denominado "Reclamos.exe" contiene los parámetros para la autentificación del servidor de base de datos Sql Server.
 
 Ejemplo del formato del config:
