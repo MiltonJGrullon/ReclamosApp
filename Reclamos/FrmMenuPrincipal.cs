@@ -134,5 +134,11 @@ namespace Reclamos
             FrmAsignarAccionesReclamos frm = new FrmAsignarAccionesReclamos();
             frm.ShowDialog();
         }
+
+        private void reclamosMasReportadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmRepReclamosAgrup frm = new FrmRepReclamosAgrup();
+            frm.ShowDialog();
+        }
     }
 }

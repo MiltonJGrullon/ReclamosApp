@@ -91,6 +91,7 @@
             // 
             // btnsalir
             // 
+            this.btnsalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnsalir.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnsalir.Location = new System.Drawing.Point(304, 115);
             this.btnsalir.Name = "btnsalir";

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Reporting.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,5 +16,16 @@ namespace Reclamos
         {
             InitializeComponent();
         }
+
+        private void FrmReporte_Load(object sender, EventArgs e)
+        {
+
+            Rpv.SetDisplayMode(DisplayMode.PrintLayout);
+            Rpv.ZoomMode = ZoomMode.PageWidth;
+            //Seleccionamos el zoom que deseamos utilizar. En este caso un 100% 
+            // Rpv.ZoomMode = ZoomMode.Percent;
+            //   Rpv.ZoomPercent = 100;
+            Rpv.RefreshReport();
+         }
     }
 }
